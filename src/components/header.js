@@ -1,28 +1,15 @@
-import { Link } from "gatsby"
 import React from "react"
+import { useTranslation } from "react-i18next"
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const Header = () => {
+  const { t } = useTranslation()
+
+  return (
+    <div id="header" className="flex justify-end items-center w-full p-4">
+      <a className="mvc-link mr-12" href="#features">{t("header.features")}</a>
+      <button className="mvc-btn mr-12">{t("common.makeRoom")}</button>
     </div>
-  </header>
-)
+  )
+}
 
 export default Header
