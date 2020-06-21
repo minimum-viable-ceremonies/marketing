@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div id="header" className="flex justify-end items-center w-full p-4">
       <a className="mvc-link mr-12" href="#features">{t("header.features")}</a>
-      <button className="mvc-btn mr-12">{t("common.makeRoom")}</button>
+      <a href={t("common.roomUrl")} className="mvc-btn">{t("common.makeRoom")} →</a>
     </div>
   )
 }
