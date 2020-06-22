@@ -130,7 +130,15 @@ getStarted:
   subtitle: Make a room for free.
 
 themes:
-  coordination: Coordination
-  culture: Culture
-  delivery: Delivery
-  innovation: Innovation
+  coordination:
+    name: Coordination
+    description: Ensure you're on the same page
+  culture:
+    name: Culture
+    description: Have a good time at work
+  delivery:
+    name: Delivery
+    description: Get 💩 done
+  innovation:
+    name: Innovation
+    description: Grow and explore new ideas

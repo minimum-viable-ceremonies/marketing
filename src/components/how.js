@@ -1,10 +1,18 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 
 import Deck from "./deck"
 
 const How = () => {
   const { t } = useTranslation()
+  const [active, setActive] = useState(false)
+  const [lastActive, setLastActive] = useState(false)
+
+  useEffect(() => {
+    if (!active) return
+
+    setLastActive(active)
+  }, [active, setLastActive])
 
   return (
     <div id="how" className="mb-16">
@@ -24,10 +32,19 @@ const How = () => {
                 'delivery',
                 'innovation'
               ].map((theme, index) => (
-                <div key={index} className={`mvc-badge ${theme}`}>
-                  {t(`themes.${theme}`)}
-                </div>
+                <button
+                  key={index}
+                  className={`mvc-badge ${theme}`}
+                  onFocus={() => setActive(theme)}
+                  onMouseOver={() => setActive(theme)}
+                  onMouseLeave={() => setActive()}
+                >
+                  {t(`themes.${theme}.name`)}
+                </button>
               ))}
+            </div>
+            <div className={`mvc-description ${active ? 'active' : ''}`}>
+              {t(`themes.${lastActive}.description`)}
             </div>
           </div>
         </div>
