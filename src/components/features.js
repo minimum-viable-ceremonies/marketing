@@ -7,7 +7,7 @@ const Features = () => {
   const { t } = useTranslation()
 
   return (
-    <div id="features" className="mb-16">
+    <div id="features" className="mb-32">
       <div className="flex flex-row justify-around ml-16 mr-16">
         {[...Array(FEATURE_COUNT)].map((_, index) => (
           <div key={index} style={{maxWidth: "300px", flexBasis: `${100 / FEATURE_COUNT}%`}} className="flex flex-col">
