@@ -9,10 +9,10 @@ const How = () => {
   return (
     <div id="how">
       <div className="flex flex-row">
-        <div style={{flexBasis: "40%"}}>
+        <div style={{flexBasis: "50%"}}>
           <Deck />
         </div>
-        <div style={{flexBasis: "60%"}} className="flex flex-col items-start">
+        <div style={{flexBasis: "50%"}} className="flex flex-col items-start">
           <div style={{margin: "auto", maxWidth: "440px"}}>
             <h2 className="mb-4">{t("how.title")}</h2>
             <p className="mb-4">{t("how.subtitle")}</p>
