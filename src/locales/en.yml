@@ -116,13 +116,13 @@ how:
         • Do you have any work that can't be progressed forwards and why?
 features:
   - title: Facilitate
-    description: Share the facilitation role across members of the team to increase engagement
+    description: Share the facilitation role across members of the team to increase engagement.
     image: https://image.com/image.jpg
   - title: Schedule
-    description: Decide
+    description: Agree quickly and effectively on a process that works for everyone.
     image: https://image.com/image.jpg
   - title: Shape
-    description: This is some text
+    description: Iterate your process over time to address the changing needs of your team.
     image: https://image.com/image.jpg
 
 getStarted:

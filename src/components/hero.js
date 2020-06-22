@@ -2,11 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 
 import Interface from "./images/interface"
-import SquiggleOne from "../images/squiggle-one.svg"
-import SquiggleTwo from "../images/squiggle-two.svg"
-import SquiggleThree from "../images/squiggle-three.svg"
-
-import "../styles/hero.scss"
+import Squiggles from "./squiggles"
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -16,7 +12,7 @@ const Hero = () => {
       <div className="flex flex-col">
         <div className="flex flex-row">
           <div style={{flexBasis: "40%"}} className="flex flex-col items-center justify-center ml-16 mr-16">
-            <div className="hero-cta flex flex-col items-start">
+            <div style={{maxWidth: "400px"}} className="flex flex-col items-start">
               <h1 className="mb-4">{t("hero.title")}</h1>
               <p className="mb-8">{t("hero.subtitle")}</p>
               <a href={t("common.roomUrl")} className="mvc-btn primary">{t("common.makeRoom")} →</a>
@@ -26,11 +22,7 @@ const Hero = () => {
             <Interface />
           </div>
         </div>
-        <div className="hero-squiggle-container">
-          <SquiggleOne className="hero-squiggle" />
-          <SquiggleTwo className="hero-squiggle" />
-          <SquiggleThree style={{bottom: "-2px"}} className="hero-squiggle" />
-        </div>
+        <Squiggles style={{marginTop: "-120px"}} />
       </div>
     </div>
   )

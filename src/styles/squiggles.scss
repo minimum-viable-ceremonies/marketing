@@ -1,15 +1,10 @@
-.hero-cta {
-  max-width: 400px;
-}
-
-.hero-squiggle-container {
-  margin-top: -120px;
+.squiggles {
   min-height: 300px;
   position: relative;
   pointer-events: none;
 }
 
-.hero-squiggle {
+.squiggle {
   position: absolute;
   width: 100%;
   bottom: 0;

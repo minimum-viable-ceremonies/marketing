@@ -7,7 +7,7 @@ const How = () => {
   const { t } = useTranslation()
 
   return (
-    <div id="how">
+    <div id="how" className="mb-16">
       <div className="flex flex-row">
         <div style={{flexBasis: "50%"}}>
           <Deck />
