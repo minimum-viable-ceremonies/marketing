@@ -39,7 +39,6 @@ const Deck = ({ visible }) => {
       return {
         x: isGone ? (200 + window.innerWidth) * dir : down ? xDelta : 0,
         rot: xDelta / 100 + (isGone ? dir * velocity * 10 : 0),
-        scale: down ? 1.1 : 1,
         delay: undefined,
         config: {
           friction: 50,
@@ -60,6 +59,8 @@ const Deck = ({ visible }) => {
           >
             <animated.div
               {...gesture(index)}
+              onMouseEnter={() => setSprings(i => i === index ? { scale: 1.1 } : null)}
+              onMouseLeave={() => setSprings(i => i === index ? { scale: 1.0 } : null)}
               className="deck-card-content flex justify-center items-center pt-2 pb-2"
               style={{transform: interpolate([rot, scale], (rot, scale) => [
                   'perspective(1500px)',
