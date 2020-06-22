@@ -31,7 +31,7 @@ const Deck = ({ visible }) => {
 
   const gesture = useDrag(({ args: [index], down, movement: [xDelta], direction: [xDir], velocity }) => {
     const dir = xDir < 0 ? -1 : 1
-    const isGone = !down && velocity > 0.15
+    const isGone = !down && velocity > 0.1
 
     setSprings(i => {
       if (index !== i || index === 0) return
