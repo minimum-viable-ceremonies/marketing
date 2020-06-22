@@ -56,7 +56,64 @@ how:
       description: Description for innovation
     - title: Culture
       description: Description for culture
+  cards:
+    - name: Ready to get started?
+    - name: Team retreat
+      icon: 🏝
+      theme: culture
+      sub-heading: Bond as a team away from the office
+      description: |
+        A Team Retreat is an all-day or multi-day, off-site activity which creates the space for the team to connect and strategize.
 
+        Agenda items may include:
+
+        • Horizon planning
+
+        • Assumptions Mapping
+
+        • Team Building
+    - name: Demo
+      icon: 🎉
+      theme: coordination
+      sub-heading: Celebrate how awesome your team is
+      description: |
+        A Demo is an opportunity for people to share what they have accomplished recently with the team. It gives people a chance to receive acknowledgement for their work and to share learnings.
+
+        Each person can share a small presentation, a video clip of what they've been working on, or just give a status update.
+    - name: Design review
+      icon: 🖍
+      theme: delivery
+      sub-heading: Get designs ready for dev
+      description: |
+        Design Reviews bring developers, managers, and other team members together have to review the in-progress designs before they go into the build pipeline.
+
+        Designs are often checked for technical considerations like component libraries, technical debt, completeness of design, or application architecture.
+    - name: Hackathon
+      icon: 🍕
+      theme: innovation
+      sub-heading: It's work. With pizza!
+      description: |
+        The people who build the product have excellent ideas for ways to improve it.  Giving team members time to explore those ideas can result in:
+
+        • a quick-win feature,
+
+        • a prototype for a future direction that hasn't been considered yet, or
+
+        • an excellent learning opportunity.
+    - name: Stand-up
+      icon: 👋
+      theme: coordination
+      sub-heading: What are you going to work on?
+      description: |
+        Stand-ups are used to give status updates about current work-in-progress.
+
+        Team members can answer these questions:
+
+        • What have you worked on since the last stand-up?
+
+        • What do you plan to work on next?
+
+        • Do you have any work that can't be progressed forwards and why?
 features:
   - title: Facilitate
     description: Share the facilitation role across members of the team to increase engagement
