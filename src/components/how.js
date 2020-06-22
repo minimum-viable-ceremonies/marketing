@@ -18,9 +18,14 @@ const How = () => {
             <p className="mb-4">{t("how.subtitle")}</p>
             <p className="mb-4">{t("how.description")}</p>
             <div className="flex flex-row justify-between">
-              {[...Array(4)].map((_, index) => (
-                <div key={index} className="mvc-badge">
-                  {t(`how.themes.${index}.title`)}
+              {[
+                'coordination',
+                'culture',
+                'delivery',
+                'innovation'
+              ].map((theme, index) => (
+                <div key={index} className={`mvc-badge ${theme}`}>
+                  {t(`themes.${theme}`)}
                 </div>
               ))}
             </div>

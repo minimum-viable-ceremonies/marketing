@@ -128,3 +128,9 @@ features:
 getStarted:
   title: Get Started Now
   subtitle: Make a room for free.
+
+themes:
+  coordination: Coordination
+  culture: Culture
+  delivery: Delivery
+  innovation: Innovation

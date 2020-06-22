@@ -97,4 +97,10 @@ html {
   padding: 0 8px;
   border: 1px solid;
   border-radius: 4px;
+  cursor: pointer;
+
+  &.delivery { color: $delivery; }
+  &.coordination { color: $coordination; }
+  &.innovation { color: $innovation; }
+  &.culture { color: $culture; }
 }

@@ -82,8 +82,8 @@ const Deck = ({ visible }) => {
                     <div className="deck-card-icon">
                       {t(`how.cards.${index}.icon`)}
                     </div>
-                    <div className="mvc-badge">
-                      {t(`how.cards.${index}.theme`)}
+                    <div className={`mvc-badge ${t(`how.cards.${index}.theme`)}`}>
+                      {t(`themes.${t(`how.cards.${index}.theme`)}`)}
                     </div>
                   </div>
                   <div className="deck-card-title mt-2">
