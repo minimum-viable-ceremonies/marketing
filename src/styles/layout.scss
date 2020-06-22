@@ -54,7 +54,6 @@ a:hover {
   font: inherit;
 }
 html {
-  font: 112.5%/1.45em georgia, serif;
   box-sizing: border-box;
   overflow-y: scroll;
 }
@@ -81,7 +80,7 @@ html {
 .mvc-btn {
   color: $grey;
   background: transparent;
-  padding: 4px 12px;
+  padding: 8px 12px;
   border: 1px solid;
   border-radius: 4px;
   font-size: 14px;
