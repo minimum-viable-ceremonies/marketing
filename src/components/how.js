@@ -15,7 +15,7 @@ const How = () => {
   }, [active, setLastActive])
 
   return (
-    <div id="how" className="mb-16">
+    <div id="how" className="mb-32">
       <div className="flex flex-row">
         <div style={{flexBasis: "50%"}}>
           <Deck />

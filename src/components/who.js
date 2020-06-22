@@ -7,7 +7,7 @@ const Who = () => {
   const { t } = useTranslation()
 
   return (
-    <div id="who" className="mb-16">
+    <div id="who" className="mb-32">
       <div className="flex flex-row">
         <div style={{flexBasis: "50%"}} className="flex flex-col items-start">
           <div style={{margin: "auto", maxWidth: "360px"}}>
