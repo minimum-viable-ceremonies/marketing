@@ -20,7 +20,7 @@ const How = () => {
         <div style={{flexBasis: "50%"}}>
           <Deck />
         </div>
-        <div style={{flexBasis: "50%"}} className="flex flex-col items-start">
+        <div style={{flexBasis: "50%"}} className="mb-8 md:mb-0 flex flex-col items-start">
           <div style={{margin: "auto", maxWidth: "440px"}}>
             <h2 className="mb-4">{t("how.title")}</h2>
             <p className="mb-4">{t("how.subtitle")}</p>

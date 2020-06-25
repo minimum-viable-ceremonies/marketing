@@ -9,3 +9,18 @@
   width: 100%;
   bottom: 0;
 }
+
+@media (min-width: 641px) {
+  #hero .squiggles {
+    margin-top: -120px;
+  }
+}
+
+@media (max-width: 640px) {
+  #hero .squiggles {
+    margin-left: -1000px;
+  }
+  #footer .squiggles {
+    margin-left: -800px;
+  }
+}
