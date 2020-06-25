@@ -7,16 +7,16 @@ const Who = () => {
   const { t } = useTranslation()
 
   return (
-    <div id="who" className="mb-32">
-      <div className="flex flex-row">
+    <div id="who" className="mb-16 md:mb-32">
+      <div className="flex flex-col md:flex-row md:items-center">
         <div style={{flexBasis: "50%"}} className="flex flex-col items-start">
-          <div style={{margin: "auto", maxWidth: "360px"}}>
+          <div className="ml-auto mr-auto mb-16 md:mb-0 text-center md:text-left" style={{maxWidth: "360px"}}>
             <h2 className="mb-4">{t("who.title")}</h2>
             <p className="mb-12">{t("who.subtitle")}</p>
             <a href={t("common.roomUrl")} className="mvc-btn primary">{t("common.makeRoom")} →</a>
           </div>
         </div>
-        <div style={{flexBasis: "50%"}}>
+        <div className="pr-8 pl-8 md:p-0" style={{flexBasis: "50%"}}>
           <div style={{marginRight: "auto", maxWidth: "600px"}}>
             <WhoImage />
           </div>
