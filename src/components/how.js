@@ -15,12 +15,12 @@ const How = () => {
   }, [active, setLastActive])
 
   return (
-    <div id="how" className="mb-32">
-      <div className="flex flex-row">
+    <div id="how" className="mb-16 md:mb-32">
+      <div className="flex flex-col-reverse md:flex-row text-center md:text-left pl-6 pr-6 md:p-0">
         <div style={{flexBasis: "50%"}}>
           <Deck />
         </div>
-        <div style={{flexBasis: "50%"}} className="flex flex-col items-start">
+        <div style={{flexBasis: "50%"}} className="mb-8 md:mb-0 flex flex-col items-start">
           <div style={{margin: "auto", maxWidth: "440px"}}>
             <h2 className="mb-4">{t("how.title")}</h2>
             <p className="mb-4">{t("how.subtitle")}</p>

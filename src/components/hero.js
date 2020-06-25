@@ -9,20 +9,20 @@ const Hero = () => {
 
   return (
     <div id="hero">
-      <div className="flex flex-col">
-        <div className="flex flex-row">
-          <div style={{flexBasis: "40%"}} className="flex flex-col items-center justify-center ml-16 mr-16">
-            <div style={{maxWidth: "400px"}} className="flex flex-col items-start">
+      <div className="flex flex-col mt-32 md:mt-0">
+        <div className="flex flex-col md:flex-row">
+          <div style={{flexBasis: "40%"}} className="flex flex-col items-center justify-center ml-8 mr-8 md:ml-16 md:mr-16">
+            <div style={{maxWidth: "400px"}} className="text-center md:text-left flex flex-col items-start">
               <h1 className="mb-4">{t("hero.title")}</h1>
               <p className="mb-8">{t("hero.subtitle")}</p>
-              <a href={t("common.roomUrl")} className="mvc-btn primary">{t("common.makeRoom")} →</a>
+              <a href={t("common.roomUrl")} className="m-auto md:m-0 mvc-btn primary">{t("common.makeRoom")} →</a>
             </div>
           </div>
-          <div style={{flexBasis: "60%"}}>
+          <div className="absolute md:static" style={{flexBasis: "60%"}}>
             <Interface />
           </div>
         </div>
-        <Squiggles style={{marginTop: "-120px"}} />
+        <Squiggles />
       </div>
     </div>
   )
