@@ -6,10 +6,10 @@ import SquiggleThree from "../images/squiggle-three.svg"
 
 import "../styles/squiggles.scss"
 
-const Squiggles = ({ style }) => {
+const Squiggles = () => {
 
   return (
-    <div style={style} className="mt-16 squiggles">
+    <div className="mt-16 squiggles">
       <SquiggleOne className="squiggle" />
       <SquiggleTwo className="squiggle" />
       <SquiggleThree style={{bottom: "-2px"}} className="squiggle" />

@@ -7,11 +7,13 @@ const What = () => {
   const { t } = useTranslation()
 
   return (
-    <div id="what" className="flex items-center justify-center">
-      <div style={{maxWidth: "500px"}} className="text-center">
+    <div id="what" className="mb-16 md:mb-32 flex items-center justify-center">
+      <div className="flex flex-col-reverse md:flex-col text-center" style={{maxWidth: "500px"}}>
         <WhatImage />
-        <h2 className="mt-12 mb-6">{t("what.title")}</h2>
-        <p className="mb-24">{t("what.subtitle")}</p>
+        <div>
+          <h2 className="mt-12 mb-6">{t("what.title")}</h2>
+          <p className="mb-6">{t("what.subtitle")}</p>
+        </div>
       </div>
     </div>
   )
