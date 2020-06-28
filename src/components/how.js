@@ -34,7 +34,7 @@ const How = () => {
               ].map((theme, index) => (
                 <button
                   key={index}
-                  className={`mvc-badge ${theme}`}
+                  className={`mvc-badge ${active === theme ? 'active' : ''}`}
                   onFocus={() => setActive(theme)}
                   onMouseOver={() => setActive(theme)}
                   onMouseLeave={() => setActive()}

@@ -1,6 +1,7 @@
 common:
   makeRoom: Make a room
   roomUrl: https://mvc.minimal.cards
+  go: Go
 
 header:
   features: Features
@@ -117,17 +118,30 @@ how:
 features:
   - title: Facilitate
     description: Share the facilitation role across members of the team to increase engagement.
-    image: https://image.com/image.jpg
   - title: Schedule
-    description: Agree quickly and effectively on a process that works for everyone.
-    image: https://image.com/image.jpg
-  - title: Shape
-    description: Iterate your process over time to address the changing needs of your team.
-    image: https://image.com/image.jpg
+    description: Agree quickly and effectively on a process that works for everyone. Pick the time and format for every meeting.
+  - title: Share
+    description: Make sure everyone is on the same page. Track your progress.
 
 getStarted:
   title: Get Started Now
   subtitle: Make a room for free.
+
+footer:
+  contact: Contact us
+  contactEmail: hey@minimal.cards
+  company: Company
+  about: About
+  blog: Articles
+  pricing: Pricing
+  notes: Release notes
+  legal: Legal
+  terms: Terms & Conditions
+  privacy: Privacy policy
+  newsletter: Newsletter
+  newsletterHelptext: Get updates on our progress; we won't spam you.
+  newsletterPlaceholder: you@example.com
+  copyright: © 2020 Minimum Viable Ceremonies
 
 themes:
   coordination:

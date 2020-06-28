@@ -91,16 +91,17 @@ html {
 }
 
 .mvc-badge {
-  font-size: 14px;
-  padding: 0 8px;
-  border: 1px solid;
-  border-radius: 4px;
+  font-size: 16px;
+  padding: 4px 8px;
   cursor: pointer;
 
-  &.delivery { color: $delivery; }
-  &.coordination { color: $coordination; }
-  &.innovation { color: $innovation; }
-  &.culture { color: $culture; }
+  color: $inactive-text;
+  background: $inactive;
+
+  &.active {
+    color: $active-text;
+    background: $active;
+  }
 }
 
 .mvc-description {
