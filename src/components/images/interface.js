@@ -15,7 +15,7 @@ const Interface = ({ src }) => {
     }
   `)
 
-  return <Img className="w-full" fluid={data.placeholderImage.childImageSharp.fluid}
+  return <Img style={{zIndex: -1}} className="w-full" fluid={data.placeholderImage.childImageSharp.fluid}
   />
 }
 

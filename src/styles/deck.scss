@@ -14,7 +14,15 @@
   justify-content: center;
 
   &-theme {
-    text-align: right;
+    border: 1px solid;
+    border-radius: 4px;
+    background: transparent;
+    font-size: 14px;
+
+    &.coordination { color: $coordination; }
+    &.culture { color: $culture; }
+    &.delivery { color: $delivery; }
+    &.innovation { color: $innovation; }
   }
 
   &-icon {

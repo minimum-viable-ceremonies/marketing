@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <div id="footer">
       <Squiggles />
-      <div className="mb-8 flex flex-col md:flex-row w-full md:w-75 justify-end">
-        <div className="mr-32 flex flex-col footer-contact">
+      <div className="mb-8 flex flex-col md:flex-row w-full md:w-75 items-center justify-end">
+        <div className="md:mr-32 text-center md:text-left flex flex-col footer-contact">
           <div><strong>{t('footer.contact')}</strong></div>
           <div style={{ fontSize: "24px", color: "blue"}} className="mb-4">
             <a href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a></div>
