@@ -61,7 +61,7 @@ const Deck = ({ visible }) => {
               {...gesture(index)}
               onMouseEnter={() => setSprings(i => i === index ? { scale: 1.1 } : null)}
               onMouseLeave={() => setSprings(i => i === index ? { scale: 1.0 } : null)}
-              className="deck-card-content flex justify-center items-center p-4"
+              className="deck-card-content flex justify-center items-center"
               style={{transform: interpolate([rot, scale], (rot, scale) => [
                   'perspective(1500px)',
                   'rotateX(15deg)',
@@ -74,18 +74,18 @@ const Deck = ({ visible }) => {
               {index === 0 ? (
                 <div className="flex flex-col justify-center items-center">
                   <p className="mb-4">{t(`how.cards.${index}.name`)}</p>
-                  <a href={t("common.roomUrl")} className="mvc-btn primary">{t("common.makeRoom")} →</a>
+                  <a href={t("common.roomUrl")} className="cta-link">{t("common.makeRoom")}</a>
                 </div>
               ) : (
                 <div className="flex flex-col w-full h-full">
-                  <div className="flex justify-between items-center">
-                    <div className="deck-card-icon">
-                      {t(`how.cards.${index}.icon`)}
-                    </div>
-                    <div className={`deck-card-theme mvc-badge ${t(`how.cards.${index}.theme`)}`}>
+                  <div className="flex justify-end">
+                    <div className={`deck-card-theme ${t(`how.cards.${index}.theme`)}`}>
                       {t(`themes.${t(`how.cards.${index}.theme`)}.name`)}
                     </div>
                   </div>
+                  <div className="deck-card-icon mt-4">
+                      {t(`how.cards.${index}.icon`)}
+                    </div>
                   <div className="deck-card-title mt-2">
                     {t(`how.cards.${index}.name`)}
                   </div>

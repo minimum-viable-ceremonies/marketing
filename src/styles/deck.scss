@@ -12,17 +12,28 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: $grey-text;
 
   &-theme {
-    border: 1px solid;
-    border-radius: 4px;
-    background: transparent;
-    font-size: 14px;
-
-    &.coordination { color: $coordination; }
-    &.culture { color: $culture; }
-    &.delivery { color: $delivery; }
-    &.innovation { color: $innovation; }
+    border-radius: 3px;
+    font-size: 9px;
+    padding: 2px 5px;
+    &.coordination { 
+      color: $coordination; 
+      background-color: $coordination-bg;
+    }
+    &.culture { 
+      color: $culture; 
+      background-color: $culture-bg;
+    }
+    &.delivery { 
+      color: $delivery; 
+      background-color: $delivery-bg;
+    }
+    &.innovation { 
+      color: $innovation;
+      background-color: $innovation-bg;
+     }
   }
 
   &-icon {
@@ -33,23 +44,22 @@
   &-title {
     font-size: 24px;
     font-weight: 600;
-    margin-bottom: 8px;
   }
 
   &-subheading {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 600;
     line-height: 147%;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
   }
 
   &-description {
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     line-height: 127%;
     font-weight: normal;
     p {
-      margin-bottom: 4px;
+      margin-bottom: 5px;
     }
   }
 }
@@ -66,6 +76,7 @@
   background-position: center center;
   will-change: transform;
   border-radius: 10px;
+  padding: 16px 16px 16px 22px;
   box-shadow:
     0px 15px 35px rgba(0, 0, 0, 0.1),
     0px 3px 11px rgba(0, 0, 0, 0.1);
@@ -74,5 +85,13 @@
 
   &:active {
     cursor: grab;
+  }
+  ul {
+    list-style: inherit;
+    margin: 0;
+    padding: 0 22px 3px 22px;
+    li {
+      padding-bottom: 4px;
+    }
   }
 }

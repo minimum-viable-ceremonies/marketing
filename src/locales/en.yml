@@ -67,12 +67,9 @@ how:
         A Team Retreat is an all-day or multi-day, off-site activity which creates the space for the team to connect and strategize.
 
         Agenda items may include:
-
-        • Horizon planning
-
-        • Assumptions Mapping
-
-        • Team Building
+          -  Horizon planning
+          - Assumptions Mapping
+          - Team Building
     - name: Demo
       icon: 🎉
       theme: coordination
@@ -95,12 +92,9 @@ how:
       sub-heading: It's work. With pizza!
       description: |
         The people who build the product have excellent ideas for ways to improve it.  Giving team members time to explore those ideas can result in:
-
-        • a quick-win feature,
-
-        • a prototype for a future direction that hasn't been considered yet, or
-
-        • an excellent learning opportunity.
+          - a quick-win feature,
+          - a prototype for a future direction that hasn't been considered yet, or
+          - an excellent learning opportunity.
     - name: Stand-up
       icon: 👋
       theme: coordination
@@ -109,12 +103,9 @@ how:
         Stand-ups are used to give status updates about current work-in-progress.
 
         Team members can answer these questions:
-
-        • What have you worked on since the last stand-up?
-
-        • What do you plan to work on next?
-
-        • Do you have any work that can't be progressed forwards and why?
+          - What have you worked on since the last stand-up?
+          - What do you plan to work on next?
+          - Do you have any work that can't be progressed forwards and why?
 features:
   - title: Facilitate
     description: Share the facilitation role across members of the team to increase engagement.
