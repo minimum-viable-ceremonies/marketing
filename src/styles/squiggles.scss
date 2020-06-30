@@ -13,6 +13,11 @@
 
 @media (min-width: 641px) {
   #hero .squiggles {
-    margin-top: -260px;
+    margin-top: -180px;
+  }
+}
+@media (min-width: 1500px) {
+  #hero .squiggles {
+    margin-top: -240px;
   }
 }

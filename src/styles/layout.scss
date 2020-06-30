@@ -81,6 +81,34 @@ html {
   }
 }
 
+.cta-link {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  padding-right: 10px;
+  color: $dusk-blue;
+  &:after {
+    content: "→";
+    display: inline-block;
+    transform: translateX(2px);
+    color: $dusk-blue;
+    transition: transform 400ms ease 0s;
+    padding-left: 4px;
+  }
+  &:hover {
+    color: $morning-blue;
+    transition: color 300ms ease 0s;
+    &:after {
+      transform: translateX(6px);
+      color: $morning-blue;
+      transition: color 300ms ease 0s;
+    }
+  }
+  &:active {
+    color: $primary;
+  }
+}
+
 .mvc-btn {
   color: $grey-text;
   background: transparent;

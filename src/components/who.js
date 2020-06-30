@@ -1,7 +1,7 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
 
-import WhoImage from "./images/who"
+import WhoImage from "../images/who.svg"
 
 const Who = () => {
   const { t } = useTranslation()
@@ -12,8 +12,8 @@ const Who = () => {
         <div style={{flexBasis: "50%"}} className="flex flex-col items-start">
           <div className="ml-auto mr-auto mb-16 md:mb-0 text-center md:text-left" style={{maxWidth: "360px"}}>
             <h2 className="mb-4">{t("who.title")}</h2>
-            <p className="mb-12">{t("who.subtitle")}</p>
-            <a href={t("common.roomUrl")} className="mvc-btn primary">{t("common.makeRoom")} →</a>
+            <p className="mb-5">{t("who.subtitle")}</p>
+            <a href={t("common.roomUrl")} className="cta-link">{t("common.makeRoom")}</a>
           </div>
         </div>
         <div className="pr-8 pl-8 md:p-0" style={{flexBasis: "50%"}}>
