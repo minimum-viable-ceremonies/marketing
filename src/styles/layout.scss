@@ -134,6 +134,7 @@ html {
     color: $coordination; 
     background-color: $coordination-bg;
     transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
     &.active {
       background-color: fade-out($coordination, 0.93);
       transform: translateY(-4px);
@@ -143,6 +144,7 @@ html {
     color: $culture; 
     background-color: $culture-bg;
     transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
     &.active {
       background-color: fade-out($culture, 0.93);
       transform: translateY(-4px);
@@ -152,6 +154,7 @@ html {
     color: $delivery; 
     background-color: $delivery-bg;
     transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
     &.active {
       background-color: fade-out($delivery, 0.93);
       transform: translateY(-4px);
@@ -161,6 +164,7 @@ html {
     color: $innovation;
     background-color: $innovation-bg;
     transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
     &.active {
       background-color: fade-out($innovation, 0.93);
       transform: translateY(-4px);
@@ -176,7 +180,7 @@ html {
   transition: all 0.3s ease-in-out;
   background: $grey;
   color: $grey-text;
-  margin: 12px 0;
+  margin: 18px 0;
   padding: 8px 12px;
   border-radius: 5px;
 

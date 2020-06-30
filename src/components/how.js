@@ -23,8 +23,8 @@ const How = () => {
         <div style={{flexBasis: "50%"}} className="mb-8 md:mb-0 flex flex-col items-start">
           <div style={{margin: "auto", maxWidth: "440px"}}>
             <h2 className="mb-4">{t("how.title")}</h2>
-            <p className="mb-4">{t("how.subtitle")}</p>
-            <p className="mb-4">{t("how.description")}</p>
+            <p className="mb-2">{t("how.subtitle")}</p>
+            <p className="mb-6">{t("how.description")}</p>
             <div className="flex flex-row justify-between">
               {[
                 'coordination',

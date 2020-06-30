@@ -47,7 +47,7 @@ testimonials:
 how:
   title: Build a Minimum Viable Ceremony
   subtitle: Start with our list of optimized, battle-tested, and proven ceremonies. Or make your own.
-  description: "Minimum Viable Ceremonies have at least one ceremony across these 4 themes:"
+  description: "Build a Minimum Viable Ceremony that has at least one ceremony across these 4 themes:"
   themes:
     - title: Coordination
       description: Description for coordination
