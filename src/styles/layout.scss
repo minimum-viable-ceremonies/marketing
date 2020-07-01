@@ -81,6 +81,34 @@ html {
   }
 }
 
+.cta-link {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 24px;
+  padding-right: 10px;
+  color: $primary;
+  &:after {
+    content: "→";
+    display: inline-block;
+    transform: translateX(2px);
+    color: $primary;
+    transition: transform 400ms ease 0s;
+    padding-left: 4px;
+  }
+  &:hover {
+    color: $morning-blue;
+    transition: color 300ms ease 0s;
+    &:after {
+      transform: translateX(6px);
+      color: $morning-blue;
+      transition: color 300ms ease 0s;
+    }
+  }
+  &:active {
+    color: $primary;
+  }
+}
+
 .mvc-btn {
   color: $grey-text;
   background: transparent;
@@ -96,30 +124,69 @@ html {
   }
 }
 
+#who svg {
+  width: 100%;
+}
+
 .mvc-badge {
   font-size: 16px;
   padding: 4px 8px;
   cursor: pointer;
+  border-radius: 5px;
 
-  color: $inactive-text;
-  background: $inactive;
-
-  &.active {
-    color: $active-text;
-    background: $active;
+  &.coordination { 
+    color: $coordination; 
+    background-color: $coordination-bg;
+    transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
+    &.active {
+      background-color: fade-out($coordination, 0.93);
+      transform: translateY(-4px);
+    }
   }
+  &.culture { 
+    color: $culture; 
+    background-color: $culture-bg;
+    transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
+    &.active {
+      background-color: fade-out($culture, 0.93);
+      transform: translateY(-4px);
+    }
+  }
+  &.delivery { 
+    color: $delivery; 
+    background-color: $delivery-bg;
+    transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
+    &.active {
+      background-color: fade-out($delivery, 0.93);
+      transform: translateY(-4px);
+    }
+  }
+  &.innovation { 
+    color: $innovation;
+    background-color: $innovation-bg;
+    transition: background-color 500ms ease 0s;
+    transition: transform 500ms ease 0s;
+    &.active {
+      background-color: fade-out($innovation, 0.93);
+      transform: translateY(-4px);
+    }
+   }
 }
 
 .mvc-description {
   position: relative;
   bottom: 8px;
-  font-size: 18px;
+  font-size: 16px;
   opacity: 0;
   transition: all 0.3s ease-in-out;
   background: $grey;
   color: $grey-text;
-  margin: 12px 0;
-  padding: 8px;
+  margin: 18px 0;
+  padding: 8px 12px;
+  border-radius: 5px;
 
   &.active {
     opacity: 1;

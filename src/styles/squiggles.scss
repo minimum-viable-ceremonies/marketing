@@ -7,11 +7,17 @@
 }
 
 .squiggle {
-  width: 100%;
+  width: 100vw;
+  height: auto;
 }
 
 @media (min-width: 641px) {
   #hero .squiggles {
     margin-top: -180px;
+  }
+}
+@media (min-width: 1500px) {
+  #hero .squiggles {
+    margin-top: -240px;
   }
 }
