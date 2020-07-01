@@ -61,7 +61,7 @@ const Deck = ({ visible }) => {
               {...gesture(index)}
               onMouseEnter={() => setSprings(i => i === index ? { scale: 1.1 } : null)}
               onMouseLeave={() => setSprings(i => i === index ? { scale: 1.0 } : null)}
-              className="deck-card-content flex justify-center items-center"
+              className="deck-card-content text-left flex justify-center items-center"
               style={{transform: interpolate([rot, scale], (rot, scale) => [
                   'perspective(1500px)',
                   'rotateX(15deg)',
