@@ -32,7 +32,7 @@ const How = () => {
                 'delivery',
                 'innovation'
               ].map((theme, index) => (
-                <button
+                <div
                   key={index}
                   className={`mvc-badge ${theme} ${active === theme ? 'active' : ''}`}
                   onFocus={() => setActive(theme)}
@@ -40,7 +40,7 @@ const How = () => {
                   onMouseLeave={() => setActive()}
                 >
                   {t(`themes.${theme}.name`)}
-                </button>
+                </div>
               ))}
             </div>
             <div className={`mvc-description ${active ? 'active' : ''}`}>
