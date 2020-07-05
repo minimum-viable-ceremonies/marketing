@@ -1,11 +1,13 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
+import { useMatomo } from "@datapunt/matomo-tracker-react"
 
 import Interface from "./images/interface"
 import Squiggles from "./squiggles"
 
 const Hero = () => {
   const { t } = useTranslation()
+  const { trackEvent } = useMatomo()
 
   return (
     <div id="hero">
@@ -15,7 +17,11 @@ const Hero = () => {
             <div style={{maxWidth: "400px"}} className="text-center md:text-left flex flex-col items-start">
               <h1 className="mb-4">{t("hero.title")}</h1>
               <p className="mb-8">{t("hero.subtitle")}</p>
-              <a href={t("common.roomUrl")} className="m-auto md:m-0 mvc-btn primary">{t("common.makeRoom")} →</a>
+              <a
+                onClick={() => trackEvent({ category: 'create-room', action: 'hero' })}
+                href={t("common.roomUrl")}
+                className="m-auto md:m-0 mvc-btn primary"
+              >{t("common.makeRoom")} →</a>
             </div>
           </div>
           <div className="absolute md:static" style={{flexBasis: "60%"}}>

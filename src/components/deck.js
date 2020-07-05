@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import { useMatomo } from "@datapunt/matomo-tracker-react"
 import { useSprings, animated, interpolate } from "react-spring"
 import { useDrag } from "react-use-gesture"
 import Markdown from "react-markdown"
@@ -12,6 +13,7 @@ const CARD_COUNT = 6
 
 const Deck = ({ visible }) => {
   const { t } = useTranslation()
+  const { trackEvent } = useMatomo()
   const [begun, begin] = useState(false)
   const [springs, setSprings] = useSprings(CARD_COUNT, i => ({
     from: { x: 0, rot: 0, scale: 1.5, y: -1000 }
@@ -74,7 +76,11 @@ const Deck = ({ visible }) => {
               {index === 0 ? (
                 <div className="flex flex-col justify-center items-center">
                   <p className="mb-4">{t(`how.cards.${index}.name`)}</p>
-                  <a href={t("common.roomUrl")} className="mvc-btn primary">{t("common.makeRoom")} →</a>
+                  <a
+                    onClick={() => trackEvent({ category: 'create-room', action: 'deck' })}
+                    href={t("common.roomUrl")}
+                    className="mvc-btn primary"
+                  >{t("common.makeRoom")} →</a>
                 </div>
               ) : (
                 <div className="flex flex-col w-full h-full">

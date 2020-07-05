@@ -12,6 +12,13 @@ jobs:
     - uses: actions/setup-node@master
       with:
         node-version: 10.x
+    - uses: DamianReeves/write-file-action@v1.0
+      with:
+        path: .env.production
+        contents: |
+          MATOMO_URL=${{ secrets.MATOMO_URL }}
+          MATOMO_SITE_ID=${{ secrets.MATOMO_SITE_ID }}
+        write-mode: overwrite
     - run: npm install
     - run: npm run build
     - uses: w9jds/firebase-action@master
