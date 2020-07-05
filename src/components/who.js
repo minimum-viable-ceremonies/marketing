@@ -2,7 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 import { useMatomo } from "@datapunt/matomo-tracker-react"
 
-import WhoImage from "./images/who"
+import WhoImage from "../images/who.svg"
 
 const Who = () => {
   const { t } = useTranslation()
@@ -14,11 +14,11 @@ const Who = () => {
         <div style={{flexBasis: "50%"}} className="flex flex-col items-start">
           <div className="ml-auto mr-auto mb-16 md:mb-0 text-center md:text-left" style={{maxWidth: "360px"}}>
             <h2 className="mb-4">{t("who.title")}</h2>
-            <p className="mb-12">{t("who.subtitle")}</p>
+            <p className="mb-5">{t("who.subtitle")}</p>
             <a
               onClick={() => trackEvent({ category: 'call-to-action', action: 'create-room', name: 'who' })}
               href={t("common.roomUrl")}
-              className="mvc-btn primary"
+              className="cta-link"
             >{t("common.makeRoom")} →</a>
           </div>
         </div>

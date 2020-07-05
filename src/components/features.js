@@ -12,7 +12,7 @@ const Features = () => {
 
   return (
     <div id="features">
-      <div className="flex flex-col md:flex-row items-center justify-around ml-16 mr-16 mb-0 md:mb-16 text-center md:text-left">
+      <div className="flex flex-col md:flex-row items-center md:items-start justify-around ml-16 mr-16 mb-0 md:mb-16 text-center md:text-left">
         {[...Array(FEATURE_COUNT)].map((_, index) => (
           <div key={index} style={{maxWidth: "325px", flexBasis: `${100 / FEATURE_COUNT}%`}} className="mb-16 flex flex-col">
             <h3 className="mb-4">{t(`features.${index}.title`)}</h3>
