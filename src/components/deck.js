@@ -77,7 +77,7 @@ const Deck = ({ visible }) => {
                 <div className="flex flex-col justify-center items-center">
                   <p className="mb-4">{t(`how.cards.${index}.name`)}</p>
                   <a
-                    onClick={() => trackEvent({ category: 'create-room', action: 'deck' })}
+                    onClick={() => trackEvent({ category: 'call-to-action', action: 'create-room', name: 'deck' })}
                     href={t("common.roomUrl")}
                     className="mvc-btn primary"
                   >{t("common.makeRoom")} →</a>

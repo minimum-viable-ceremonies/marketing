@@ -18,7 +18,7 @@ const Hero = () => {
               <h1 className="mb-4">{t("hero.title")}</h1>
               <p className="mb-8">{t("hero.subtitle")}</p>
               <a
-                onClick={() => trackEvent({ category: 'create-room', action: 'hero' })}
+                onClick={() => trackEvent({ category: 'call-to-action', action: 'create-room', name: 'hero' })}
                 href={t("common.roomUrl")}
                 className="m-auto md:m-0 mvc-btn primary"
               >{t("common.makeRoom")} →</a>

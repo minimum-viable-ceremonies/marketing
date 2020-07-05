@@ -11,7 +11,7 @@ const GetStarted = () => {
       <h2 className="mb-2">{t(`getStarted.title`)}</h2>
       <p className="mb-4">{t(`getStarted.subtitle`)}</p>
       <a
-        onClick={() => trackEvent({ category: 'create-room', action: 'get-started' })}
+        onClick={() => trackEvent({ category: 'call-to-action', action: 'create-room', name: 'get-started' })}
         href={t("common.roomUrl")}
         className="mvc-btn primary"
       >{t("common.makeRoom")} →</a>

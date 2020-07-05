@@ -12,7 +12,7 @@ const Header = () => {
         <a className="mvc-link mr-12" href="#features">{t("header.features")}</a>
         <a
           onClick={() => {
-            trackEvent({ category: 'create-room', action: 'header' })
+            trackEvent({ category: 'call-to-action', action: 'create-room', name: 'header' })
           }}
           href={t("common.roomUrl")}
           className="mvc-btn"
