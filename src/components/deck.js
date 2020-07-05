@@ -80,7 +80,7 @@ const Deck = ({ visible }) => {
                     onClick={() => trackEvent({ category: 'call-to-action', action: 'create-room', name: 'deck' })}
                     href={t("common.roomUrl")}
                     className="cta-link"
-                  >{t("common.makeRoom")} →</a>
+                  >{t("common.makeRoom")}</a>
                 </div>
               ) : (
                 <div className="flex flex-col w-full h-full">
