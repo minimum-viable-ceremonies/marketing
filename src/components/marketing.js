@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { useMatomo } from "@datapunt/matomo-tracker-react"
 
 import Header from "./header"
 import Hero from "./hero"
@@ -10,16 +11,22 @@ import GetStarted from "./getStarted"
 import Testimonials from "./testimonials"
 import Footer from "./footer"
 
-const Marketing = () => <>
-  <Header />
-  <Hero />
-  <What />
-  <Who />
-  <How />
-  <Features />
-  <GetStarted />
-  <Testimonials />
-  <Footer />
-</>
+const Marketing = () => {
+  const { trackPageView } = useMatomo()
+
+  useEffect(() => { trackPageView() }, [])
+
+  return <>
+    <Header />
+    <Hero />
+    <What />
+    <Who />
+    <How />
+    <Features />
+    <GetStarted />
+    <Testimonials />
+    <Footer />
+  </>
+}
 
 export default Marketing
