@@ -20,8 +20,8 @@ const Hero = () => {
               <a
                 onClick={() => trackEvent({ category: 'call-to-action', action: 'create-room', name: 'hero' })}
                 href={t("common.roomUrl")}
-                className="m-auto md:m-0 mvc-btn primary"
-              >{t("common.makeRoom")} →</a>
+                className="m-auto md:m-0 cta-link primary"
+              >{t("common.makeRoom")}</a>
             </div>
           </div>
           <div className="absolute md:static" style={{flexBasis: "60%"}}>

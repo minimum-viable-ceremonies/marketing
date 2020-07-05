@@ -19,7 +19,7 @@ const Who = () => {
               onClick={() => trackEvent({ category: 'call-to-action', action: 'create-room', name: 'who' })}
               href={t("common.roomUrl")}
               className="cta-link"
-            >{t("common.makeRoom")} →</a>
+            >{t("common.makeRoom")}</a>
           </div>
         </div>
         <div className="pr-8 pl-8 md:p-0" style={{flexBasis: "50%"}}>
