@@ -8,7 +8,7 @@ import "../data/locales"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO page="home" />
     <Marketing />
   </Layout>
 )
