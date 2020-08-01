@@ -137,16 +137,16 @@ footer:
 themes:
   coordination:
     name: Coordination
-    description: Coordination ceremonies are all about getting people on the same page and communicating better. 
+    description: Coordination ceremonies are all about getting people on the same page and communicating better.
   culture:
     name: Culture
     description: Happy people thrive with good culture. Culture ceremonies focus on people instead of process.
   delivery:
     name: Delivery
-    description: Delivery ceremonies are essential for optimizing efficiency and getting 💩done. 
+    description: Delivery ceremonies are essential for optimizing efficiency and getting 💩done.
   innovation:
     name: Innovation
-    description: Stay relevant. Grow and explore new ideas with innovation ceremonies.  
+    description: Stay relevant. Grow and explore new ideas with innovation ceremonies.
 
 metadata:
   site:
@@ -154,7 +154,7 @@ metadata:
     url: https://minimal.cards/
   home:
     title: Free Process Planning Tool for Agile Teams
-    description: Build a Minimum Viable Ceremony to have more productive meetings.
+    description: Stop hating meetings. Build a lean, agile process that works perfectly for your team. It's free!
   404:
     title: 404 not found
     description: Soz friend you are lost :/
