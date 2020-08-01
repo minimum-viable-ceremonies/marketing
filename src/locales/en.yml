@@ -147,3 +147,14 @@ themes:
   innovation:
     name: Innovation
     description: Stay relevant. Grow and explore new ideas with innovation ceremonies.  
+
+metadata:
+  site:
+    title: Minimum Viable Ceremonies
+    url: https://minimal.cards/
+  home:
+    title: Free Process Planning Tool for Agile Teams
+    description: Build a Minimum Viable Ceremony to have more productive meetings.
+  404:
+    title: 404 not found
+    description: Soz friend you are lost :/
