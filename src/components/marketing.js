@@ -14,7 +14,7 @@ import Footer from "./footer"
 const Marketing = () => {
   const { trackPageView } = useMatomo()
 
-  useEffect(() => { trackPageView() }, [])
+  useEffect(() => { trackPageView() }, [trackPageView])
 
   return <>
     <Header />
