@@ -8,11 +8,11 @@ const Layout = ({ children }) => (
     urlBase: process.env.MATOMO_URL,
     siteId: process.env.MATOMO_SITE_ID
   }) : {}}>
-    <FreshChat
+    {process.env.FRESHCHAT_TOKEN && <FreshChat
       token={process.env.FRESHCHAT_TOKEN}
       host={process.env.FRESHCHAT_HOST}
       siteId={process.env.FIREBASE_DOMAIN}
-    />
+    />}
     <main>{children}</main>
   </MatomoProvider>
 )
