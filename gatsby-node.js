@@ -18,12 +18,12 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
 )
 
 exports.createPagesStatefully = ({ actions: { createNode }, createContentDigest }) => {
-  if (!process.env.MVC_NOTION_ARTICLES_ID || !process.env.MVC_NOTION_ARTICLES_VIEW) { return }
+  if (!process.env.NOTION_COLLECTION_ID || !process.env.NOTION_COLLECTION_VIEW) { return }
   console.log('Fetching blog articles from Notion...')
 
   createAgent().queryCollection({
-    collectionId: process.env.MVC_NOTION_ARTICLES_ID,
-    collectionViewId: process.env.MVC_NOTION_ARTICLES_VIEW,
+    collectionId: process.env.NOTION_COLLECTION_ID,
+    collectionViewId: process.env.NOTION_COLLECTION_VIEW,
     loader: { type: "table" }
   }).then(({ result: { blockIds }, recordMap: { block } }) => (
     Object.entries(block)
