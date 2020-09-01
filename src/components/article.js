@@ -1,10 +1,18 @@
 import React from "react"
 import { Link } from "gatsby"
 
-const Article = ({ path, title }) => {
+import "../styles/article.scss"
+
+const Article = ({ article: { published, blurb, preview, path, title } }) => {
   return (
-    <div>
-      <Link key={path} to={path}>{title}</Link>
+    <div className="article m-4">
+      <Link key={path} to={path}>
+        <div className="article__preview" style={{backgroundImage: `url(${preview})`}} />
+        <div className="article__content p-4">
+          <h3 className="article__title mb-2">{title}</h3>
+          <p className="article__blurb">{blurb}</p>
+        </div>
+      </Link>
     </div>
   )
 }

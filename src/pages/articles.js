@@ -11,7 +11,7 @@ const ArticlesPage = () => {
       allArticle {
         edges {
           node {
-            fields { path title }
+            fields { published blurb preview path title }
           }
         }
       }
@@ -20,9 +20,11 @@ const ArticlesPage = () => {
   return (
     <Layout>
       <SEO page="articles" />
-      {edges.map(({ node: { fields: { path, title } } }) => (
-        <Article key={path} path={path} title={title} />
-      ))}
+      <div className="flex flex-row justify-around">
+        {edges.map(({ node: { fields } }) => (
+          <Article key={fields.path} article={fields} />
+        ))}
+      </div>
     </Layout>
   )
 }
