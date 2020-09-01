@@ -11,7 +11,7 @@ const ArticlesPage = () => {
       allArticle {
         edges {
           node {
-            fields { published blurb preview slug title }
+            fields { published blurb preview slug title author { name avatar } }
           }
         }
       }
