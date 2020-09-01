@@ -2,7 +2,6 @@ const { createAgent } = require("notionapi-agent")
 const Notion = require("get-notion-contents").default
 const notion = new Notion('')
 const parameterize = require('parameterize')
-const path = require('path')
 
 exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
   createTypes(`
@@ -27,7 +26,7 @@ exports.createPagesStatefully = ({ actions: { createNode }, createContentDigest 
   createAgent().queryCollection({
     collectionId: process.env.NOTION_COLLECTION_ID,
     collectionViewId: process.env.NOTION_COLLECTION_VIEW,
-    loader: { type: "table" }
+    loader: { type: 'table' }
   }).then(({ result: { blockIds }, recordMap: { collection, block } }) => {
     const schema = Object.entries(Object.values(collection)[0].value.schema)
       .map(([key, { name }]) => [name, key])
