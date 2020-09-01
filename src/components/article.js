@@ -3,10 +3,10 @@ import { Link } from "gatsby"
 
 import "../styles/article.scss"
 
-const Article = ({ article: { published, blurb, preview, path, title } }) => {
+const Article = ({ article: { published, blurb, preview, slug, title } }) => {
   return (
     <div className="article m-4">
-      <Link to={path}>
+      <Link to={`/articles/${slug}`}>
         <div className="article__preview" style={{backgroundImage: `url(${preview})`}} />
         <div className="article__content p-4">
           <h3 className="article__title mb-2">{title}</h3>
