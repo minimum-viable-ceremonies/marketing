@@ -11,7 +11,7 @@ const ArticlesPage = () => {
       allArticle {
         edges {
           node {
-            fields { published blurb preview slug title author { name avatar } }
+            fields { published blurb preview slug timestamp title author { name avatar } }
           }
         }
       }
@@ -21,9 +21,10 @@ const ArticlesPage = () => {
     <Layout>
       <SEO page="articles" />
       <div className="flex flex-row justify-around">
-        {edges.map(({ node: { fields } }) => (
-          <Article key={fields.slug} article={fields} />
-        ))}
+        {edges
+          .sort((a, b) => a.timestamp > b.timestamp ? -1 : 1)
+          .map(({ node: { fields } }) => <Article key={fields.slug} article={fields} />)
+        }
       </div>
     </Layout>
   )

@@ -21,6 +21,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
       blurb: String
       preview: String
       published: Boolean
+      timestamp: Date
       author: Author
     }
   `)
@@ -57,9 +58,9 @@ exports.createPagesStatefully = ({ actions: { createNode }, createContentDigest 
                 content: JSON.stringify({
                   author,
                   slug: parameterize(titleString),
-                  path: `/articles/${parameterize(titleString)}`,
                   blurb: parseBlurb(properties, schema),
                   preview: parsePreview(properties, schema),
+                  timestamp: parseTimestamp(properties, schema),
                   published: parsePublished(properties, schema),
                   html: content
                 }),
@@ -81,6 +82,9 @@ const parsePreview = (properties, { preview }) =>
 
 const parsePublished = (properties, { published }) =>
   !!properties[published]
+
+const parseTimestamp = (properties, { timestamp }) =>
+  properties[timestamp] && properties[timestamp][0][1][0][1].start_date
 
 const parseAuthor = async (agent, properties, { author }) => {
   if (!properties[author]) { return }
@@ -104,7 +108,7 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
   const { type, content, description } = node.internal
 
   if (type === 'Article') {
-    const { slug, blurb, published, preview, author, html } = JSON.parse(content)
+    const { slug, blurb, published, preview, author, timestamp, html } = JSON.parse(content)
     console.log(`creating article ${slug}...`)
 
     createNodeField({ node, name: 'slug', value: slug })
@@ -112,6 +116,7 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
     createNodeField({ node, name: 'preview', value: preview})
     createNodeField({ node, name: 'published', value: published })
     createNodeField({ node, name: 'author', value: author })
+    createNodeField({ node, name: 'timestamp', value: timestamp })
     createNodeField({ node, name: 'title', value: description })
     createPage({
       path: `/articles/${slug}`,
