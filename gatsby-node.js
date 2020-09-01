@@ -27,10 +27,11 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
   `)
 )
 
-exports.createPagesStatefully = ({ actions: { createNode }, createContentDigest }) => {
+exports.createPagesStatefully = ({ reporter, actions: { createNode }, createContentDigest }) => {
   if (!process.env.NOTION_COLLECTION_ID || !process.env.NOTION_COLLECTION_VIEW) { return }
-  console.log('Fetching blog articles from Notion...')
   const agent = createAgent()
+  const { start, end, error } = reporter.activityTimer('fetch articles from Notion')
+  start()
 
   agent.queryCollection({
     collectionId: process.env.NOTION_COLLECTION_ID,
@@ -71,7 +72,7 @@ exports.createPagesStatefully = ({ actions: { createNode }, createContentDigest 
           ))
         ))
       ))
-  })
+  }).then(end).catch(error)
 }
 
 const parseBlurb = (properties, { blurb }) =>
@@ -109,7 +110,6 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
 
   if (type === 'Article') {
     const { slug, blurb, published, preview, author, timestamp, html } = JSON.parse(content)
-    console.log(`creating article ${slug}...`)
 
     createNodeField({ node, name: 'slug', value: slug })
     createNodeField({ node, name: 'blurb', value: blurb })
