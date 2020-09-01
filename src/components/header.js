@@ -10,6 +10,7 @@ const Header = () => {
     <div style={{top: 0, zIndex: 1}} id="header" className="fixed md:static w-full">
       <div className="flex justify-end items-center w-full p-4">
         <a className="mvc-link mr-12" href="#features">{t("header.features")}</a>
+        <a className="mvc-link mr-12" href="/articles">{t("header.articles")}</a>
         <a
           onClick={() => {
             trackEvent({ category: 'call-to-action', action: 'create-room', name: 'header' })

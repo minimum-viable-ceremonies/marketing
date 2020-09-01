@@ -5,6 +5,7 @@ common:
 
 header:
   features: Features
+  articles: Articles
   pricing: Pricing
 
 hero:
