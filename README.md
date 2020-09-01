@@ -23,8 +23,8 @@ This site uses [Notion](https://notion.so) as a blogging platform, pulling in ar
 In order to pull in the articles from Notion, you'll need to find the collection id and the collection view id for a table via the Notion API, and populate the following environment variables:
 
 ```shell
-MVC_NOTION_ARTICLES_ID="<collection_id>"
-MVC_NOTION_ARTICLES_VIEW="<collection_view_id>"
+NOTION_COLLECTION_ID="<collection_id>"
+NOTION_COLLECTION_VIEW="<collection_view_id>"
 ```
 
 ### 💫 **Deploying.**
