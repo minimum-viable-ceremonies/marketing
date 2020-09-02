@@ -2,6 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 
 import Squiggles from "./squiggles"
+import styles from "../styles/footer.scss"
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -9,11 +10,14 @@ const Footer = () => {
   return (
     <div id="footer">
       <Squiggles />
-      <div className="mb-8 flex flex-col md:flex-row w-full md:w-75 items-center justify-end">
+      <div className="pb-8 pt-8 flex flex-col md:flex-row md:max-w-screen-md items-center lg:max-w-screen-lg md:m-auto">
         <div className="md:mr-32 text-center md:text-left flex flex-col footer-contact">
-          <div><strong>{t('footer.contact')}</strong></div>
+          <div className="title"><strong>{t('footer.contact')}</strong></div>
           <div style={{ fontSize: "24px", color: "blue"}} className="mb-4">
-            <a href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a></div>
+            <strong>
+              <a href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a>
+            </strong>
+          </div>
         </div>
         {false && <div className="mr-32 flex flex-col footer-company">
           <div className="mb-4">
