@@ -2,6 +2,7 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 
 import Squiggles from "./squiggles"
+import Newsletter from "./newsletter"
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -43,9 +44,9 @@ const Footer = () => {
             <a href="/privacy">{t('footer.privacy')}</a>
           </div>
         </div>}
-        {false && <div className="mr-32 flex flex-col footer-newsletter">
-          <div><strong>{t('footer.newsletter')}</strong></div>
-        </div>}
+        <div className="mr-32 flex flex-col footer-newsletter">
+          <Newsletter />
+        </div>
       </div>
     </div>
   )
