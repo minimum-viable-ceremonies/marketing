@@ -1,0 +1,29 @@
+@import 'colors';
+.title {
+    color: $grey-text;
+}
+
+.footer-contact {
+    a {
+        color: $primary;
+        position: relative;
+    }
+    a:hover {
+        color: $morning-blue;
+    }
+    a:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 4px;
+        bottom: -7px;
+        left: 0;
+        background-color: $morning-blue;
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+    a:hover:before {
+        visibility: visible;
+        width: 100%;
+    }
+}
