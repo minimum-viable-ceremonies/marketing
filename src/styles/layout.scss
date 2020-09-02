@@ -88,14 +88,6 @@ html {
   padding-right: 10px;
   color: $primary;
 
-  &.primary {
-    color: $primary-text;
-    background: $primary;
-
-    &:after {
-      color: $primary-text;
-    }
-  }
   &:after {
     content: "→";
     display: inline-block;
