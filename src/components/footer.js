@@ -12,7 +12,7 @@ const Footer = () => {
       <Squiggles />
       <div className="pb-8 pt-8 flex flex-col md:flex-row md:max-w-screen-md items-center lg:max-w-screen-lg md:m-auto">
         <div className="md:mr-32 text-center md:text-left flex flex-col footer-contact">
-          <div className="title"><strong>{t('footer.contact')}</strong></div>
+          <div className="footer-title"><strong>{t('footer.contact')}</strong></div>
           <div style={{ fontSize: "24px", color: "blue"}} className="mb-4">
             <strong>
               <a href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a>
