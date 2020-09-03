@@ -135,6 +135,8 @@ newsletter:
   header: Stay up to date
   helptext: Get updates on our progress. We won't spam you!
   placeholder: you@example.com
+  success: We'll be in touch soon! 🙃
+  failure: That doesn't look like a valid email address! 😭
 
 themes:
   coordination:

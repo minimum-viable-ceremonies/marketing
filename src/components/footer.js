@@ -12,16 +12,14 @@ const Footer = () => {
   return (
     <div id="footer">
       <Squiggles />
-      <div className="pb-8 pt-8 flex flex-col md:flex-row md:max-w-screen-md items-center lg:max-w-screen-lg md:m-auto">
-        <div className="md:mr-32 text-center md:text-left flex flex-col footer-contact">
-          <div className="footer-title"><strong>{t('footer.contact')}</strong></div>
+      <div className="pb-8 pt-8 flex flex-col md:justify-center lg:justify-between md:flex-row md:max-w-screen-md sm:items-center md:items-start lg:max-w-screen-lg md:m-auto">
+        <div className="md:text-center md:text-left flex flex-col sm:items-center md:items-start footer-contact">
+          <div className="footer-title">{t('footer.contact')}</div>
           <div style={{ fontSize: "24px", color: "blue"}} className="mb-4">
-            <strong>
-              <a href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a>
-            </strong>
+            <a className="mvc-underline-link" href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a>
           </div>
         </div>
-        {false && <div className="mr-32 flex flex-col footer-company">
+        {false && <div className="flex flex-col footer-company">
           <div className="mb-4">
             <strong>{t('footer.company')}</strong>
           </div>
@@ -38,7 +36,7 @@ const Footer = () => {
             <a href="/notes">{t('footer.notes')}</a>
           </div>
         </div>}
-        {false && <div className="mr-32 flex flex-col footer-legal">
+        {false && <div className="flex flex-col footer-legal">
           <div className="mb-4">
             <strong>{t('footer.legal')}</strong>
           </div>
@@ -49,7 +47,7 @@ const Footer = () => {
             <a href="/privacy">{t('footer.privacy')}</a>
           </div>
         </div>}
-        <div className="mr-32 flex flex-col footer-newsletter">
+        <div className="flex flex-col footer-newsletter">
           <Newsletter />
         </div>
       </div>
