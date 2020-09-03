@@ -87,6 +87,7 @@ html {
   line-height: 24px;
   padding-right: 10px;
   color: $primary;
+
   &:after {
     content: "→";
     display: inline-block;
@@ -118,9 +119,21 @@ html {
   font-size: 14px;
   cursor: pointer;
 
+  &--loading {
+    color: $primary !important;
+
+    &:after {
+      visibility: hidden;
+    }
+  }
+
   &.primary {
     color: $primary-text;
     background: $primary;
+
+    &:after {
+      color: $primary-text;
+    }
   }
 }
 
@@ -134,8 +147,8 @@ html {
   cursor: pointer;
   border-radius: 5px;
 
-  &.coordination { 
-    color: $coordination; 
+  &.coordination {
+    color: $coordination;
     background-color: $coordination-bg;
     transition: background-color 500ms ease 0s;
     transition: transform 500ms ease 0s;
@@ -144,8 +157,8 @@ html {
       transform: translateY(-4px);
     }
   }
-  &.culture { 
-    color: $culture; 
+  &.culture {
+    color: $culture;
     background-color: $culture-bg;
     transition: background-color 500ms ease 0s;
     transition: transform 500ms ease 0s;
@@ -154,8 +167,8 @@ html {
       transform: translateY(-4px);
     }
   }
-  &.delivery { 
-    color: $delivery; 
+  &.delivery {
+    color: $delivery;
     background-color: $delivery-bg;
     transition: background-color 500ms ease 0s;
     transition: transform 500ms ease 0s;
@@ -164,7 +177,7 @@ html {
       transform: translateY(-4px);
     }
   }
-  &.innovation { 
+  &.innovation {
     color: $innovation;
     background-color: $innovation-bg;
     transition: background-color 500ms ease 0s;
@@ -174,6 +187,23 @@ html {
       transform: translateY(-4px);
     }
    }
+}
+
+.mvc-underline-link {
+  &:hover:before {
+    width: 100%;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -8px;
+    left: 0;
+    background-color: $morning-blue;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .mvc-description {
@@ -191,5 +221,13 @@ html {
   &.active {
     opacity: 1;
     bottom: 0;
+  }
+}
+
+input {
+  transition: border 500ms ease-in-out;
+
+  &.failure {
+    border-color: red;
   }
 }

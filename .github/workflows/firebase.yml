@@ -20,6 +20,7 @@ jobs:
           MATOMO_SITE_ID=${{ secrets.MATOMO_SITE_ID }}
           FRESHCHAT_TOKEN=${{ secrets.FRESHCHAT_TOKEN }}
           FRESHCHAT_HOST=${{ secrets.FRESHCHAT_HOST }}
+          FUNCTIONS_HOST=${{ secrets.FUNCTIONS_HOST }}
         write-mode: overwrite
     - run: npm install
     - run: npm run build

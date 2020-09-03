@@ -1,32 +1,57 @@
 @import 'colors';
-.footer-title {
-  color: $grey-text;
-}
 
-.footer-contact {
-  a {
-    color: $primary;
-    position: relative;
+.footer {
+  &-title {
+    color: $grey-text;
+    font-weight: bold;
+  }
 
-    &:hover {
-      color: $morning-blue;
+  &-contact {
+    a {
+      color: $primary;
+      position: relative;
+      font-weight: bold;
 
-      &:before {
-        visibility: visible;
-        width: 100%;
+      &:hover {
+        color: $morning-blue;
       }
     }
+  }
 
-    &:before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 4px;
-      bottom: -7px;
-      left: 0;
-      background-color: $morning-blue;
-      visibility: hidden;
-      transition: all 0.3s ease-in-out;
+  &-message {
+    position: relative;
+    opacity: 0;
+
+    &.failure {
+      color: $red;
     }
+
+    &.active {
+      -webkit-animation: success-fade 3.0s ease-in-out;
+      animation: success-fade 3.0s ease-in-out;
+    }
+  }
+}
+
+@keyframes success-fade {
+  0% {
+    opacity: 0;
+    top: -8px;
+  }
+  35% {
+    opacity: 0;
+    top: -8px;
+  }
+  45% {
+    opacity: 1;
+    top: 0;
+  }
+  90% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: 4px;
   }
 }
