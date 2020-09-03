@@ -18,7 +18,7 @@ const Signup = () => {
     setLoading(true)
     setState('')
     trackEvent({ category: 'call-to-action', action: 'subscribe-to-list', name: 'signup' })
-    fetch('http://localhost:5001/minimum-viable-ceremonies-dev/us-central1/sendgrid-subscribe', {
+    fetch(`${process.env.FUNCTIONS_HOST}/sendgrid-subscribe`, {
       method: 'PUT',
       body: JSON.stringify({ email }),
       headers: { 'Content-Type': 'application/json' }
