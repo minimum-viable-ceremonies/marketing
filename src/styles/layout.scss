@@ -73,11 +73,25 @@ html {
 
 .mvc-link {
   color: $grey-text;
-  text-decoration: none;
   font-size: 14px;
+  transition: color 0.3s ease-in-out;
+  position: relative;
 
   &:hover {
-    text-decoration: underline;
+    color: $morning-blue;
+
+    &:before { width: 100%; }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -4px;
+    left: 0;
+    background-color: $morning-blue;
+    transition: all 0.3s ease-in-out;
   }
 }
 
@@ -187,23 +201,6 @@ html {
       transform: translateY(-4px);
     }
    }
-}
-
-.mvc-underline-link {
-  &:hover:before {
-    width: 100%;
-  }
-
-  &:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 4px;
-    bottom: -8px;
-    left: 0;
-    background-color: $morning-blue;
-    transition: all 0.3s ease-in-out;
-  }
 }
 
 .mvc-description {

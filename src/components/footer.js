@@ -15,8 +15,8 @@ const Footer = () => {
       <div className="pb-8 pt-8 flex flex-col md:justify-center lg:justify-between md:flex-row md:max-w-screen-md sm:items-center md:items-start lg:max-w-screen-lg md:m-auto">
         <div className="md:text-center md:text-left flex flex-col sm:items-center md:items-start footer-contact">
           <div className="footer-title">{t('footer.contact')}</div>
-          <div style={{ fontSize: "24px", color: "blue"}} className="mb-4">
-            <a className="mvc-underline-link" href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a>
+          <div className="mb-4">
+            <a style={{fontSize: "24px"}} className="mvc-link" href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a>
           </div>
         </div>
         {false && <div className="flex flex-col footer-company">

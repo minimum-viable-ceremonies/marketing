@@ -29,6 +29,10 @@ const Signup = () => {
       setLoading(false)
       setState(errors ? "failure" : "success")
       setTimeout(() => setState(''), 3000)
+    }).catch(() => {
+      setLoading(false)
+      setState("failure")
+      setTimeout(() => setState(''), 3000)
     })
   }
 
