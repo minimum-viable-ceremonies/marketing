@@ -33,7 +33,10 @@
     "tailwindcss": "^1.4.6"
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "cypress": "^5.1.0",
+    "cypress-firebase": "^1.4.4",
+    "prettier": "2.0.5",
+    "start-server-and-test": "^1.11.3"
   },
   "keywords": [
     "gatsby"
@@ -46,7 +49,10 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test": "start-server-and-test develop http://localhost:8000 cypress:open",
+    "test:ci": "start-server-and-test develop http://localhost:8000 cypress:run"
   },
   "repository": {
     "type": "git",
