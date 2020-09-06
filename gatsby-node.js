@@ -16,6 +16,7 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
       avatar: String
     }
     type ArticleField {
+      type: String
       title: String
       slug: String
       blurb: String
@@ -59,6 +60,7 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
                 content: JSON.stringify({
                   author,
                   slug: parameterize(titleString),
+                  type: parseType(properties, schema),
                   blurb: parseBlurb(properties, schema),
                   preview: parsePreview(properties, schema),
                   timestamp: parseTimestamp(properties, schema),
@@ -79,6 +81,9 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
       ))
   }).then(end).catch(error)
 }
+
+const parseType = (properties, { type }) =>
+  properties[type] && properties[type][0][0]
 
 const parseBlurb = (properties, { blurb }) =>
   properties[blurb] && properties[blurb][0][0]
@@ -120,10 +125,10 @@ const parseAuthor = async (agent, properties, { author }) => {
 }
 
 exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
-  const { type, content, description } = node.internal
+  const { content, description } = node.internal
 
-  if (type === 'Article') {
-    const { slug, blurb, published, preview, author, timestamp, html, meta } = JSON.parse(content)
+  if (node.contentType === 'Article') {
+    const { type, slug, blurb, published, preview, author, timestamp, html, meta } = JSON.parse(content)
     createNodeField({ node, name: 'slug', value: slug })
     createNodeField({ node, name: 'blurb', value: blurb })
     createNodeField({ node, name: 'preview', value: preview})
@@ -132,6 +137,7 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
     createNodeField({ node, name: 'timestamp', value: timestamp })
     createNodeField({ node, name: 'title', value: description })
     createNodeField({ node, name: 'meta', value: meta })
+    createNodeField({ node, name: 'type', value: type })
     createPage({
       path: `/articles/${slug}`,
       component: require.resolve('./src/pages/article.js'),

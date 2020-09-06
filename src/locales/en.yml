@@ -2,6 +2,7 @@ common:
   makeRoom: Make a room
   roomUrl: https://mvc.minimal.cards
   go: Go
+  updated: Updated on {{timestamp}}
 
 header:
   features: Features
@@ -148,6 +149,17 @@ themes:
   innovation:
     name: Innovation
     description: Stay relevant. Grow and explore new ideas with innovation ceremonies.
+
+articles:
+  learning:
+    title: Minimal Learnings ✨
+    text: People are the hardest part of working in a team. That’s why were here to help. Explore articles to learn about building strong culture.
+  resources:
+    title: Articles
+    text: Resources, best practices, and more!
+  updates:
+    title: Updates
+    text: Updates from the team at Minimum Viable Ceremonies
 
 metadata:
   site:

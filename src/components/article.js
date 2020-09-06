@@ -1,22 +1,28 @@
 import React from "react"
-import Moment from "react-moment"
+import moment from "moment"
 import { Link } from "gatsby"
+import { useTranslation } from "react-i18next"
 
 import "../styles/article.scss"
 
 const Article = ({ article: { published, blurb, preview, slug, author, timestamp, title } }) => {
+  const { t } = useTranslation()
+
   return (
-    <div className="article m-4">
+    <div className="article m-4 mb-24" style={{flexBasis: "50%"}}>
       <Link to={`/articles/${slug}`}>
-        <div className="article__preview" style={{backgroundImage: `url(${preview})`}} />
-        <div className="article__author ml-4 mr-4 mt-2 flex flex-row items-center">
-          <img className="mr-2" src={author.avatar} alt={author.name} />
-          <div className="flex-grow"><i>{author.name}</i></div>
-          <Moment format="D MMM yyyy">{timestamp}</Moment>
+        <div className="article__preview mb-4" style={{backgroundImage: `url(${preview})`}} />
+        <div className="article__meta mb-4">
+          <div className="article__timestamp text-sm mb-1">
+            {t("common.updated", { timestamp: moment(timestamp).format('MMMM D, yyyy') })}
+          </div>
+          <div className="article__author text-sm">
+            {author.name}
+          </div>
         </div>
-        <div className="article__content p-4">
-          <h3 className="article__title mb-2">{title}</h3>
-          <p className="article__blurb">{blurb}</p>
+        <div className="article__content mb-4">
+          <h3 className="article__title mb-4">{title}</h3>
+          <p className="article__blurb mb-8">{blurb}</p>
         </div>
       </Link>
     </div>
