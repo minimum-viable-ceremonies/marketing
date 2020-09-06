@@ -3,18 +3,15 @@ import { Helmet } from "react-helmet"
 import { useTranslation } from "react-i18next"
 import { document } from "browser-monads"
 
-const SEO = ({ page = 'home', params = {} }) => {
+const SEO = ({ page = 'home', params = {}, meta = {} }) => {
   const { t, i18n } = useTranslation()
-  const title = [
-    t(`metadata.site.title`),
-    t(`metadata.${page}.title`, params),
-  ].join(' | ')
-  const description = t(`metadata.${page}.description`, params)
-  const url = t(`metadata.site.url`)
-  const image = [
-    document.location.origin,
-    require(`../images/${i18n.languages[0]}/meta.png`)
-  ].join('')
+  const { title, description, url, image } = {
+    title: `${t(`metadata.site.title`)} | ${t(`metadata.${page}.title`, params)}`,
+    description: t(`metadata.${page}.description`, params),
+    url: t(`metadata.site.url`),
+    image: `${document.location.origin}${require(`../images/${i18n.languages[0]}/meta.png`)}`,
+    ...meta,
+  }
 
   return (
     <Helmet

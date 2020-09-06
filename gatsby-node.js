@@ -63,6 +63,11 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
                   preview: parsePreview(properties, schema),
                   timestamp: parseTimestamp(properties, schema),
                   published: parsePublished(properties, schema),
+                  meta: {
+                    title: parseMetaTitle(properties, schema),
+                    description: parseMetaDescription(properties, schema),
+                    image: parseMetaImage(properties, schema)
+                  },
                   html: content
                 }),
                 contentDigest: createContentDigest(id),
@@ -87,6 +92,15 @@ const parsePublished = (properties, { published }) =>
 const parseTimestamp = (properties, { timestamp }) =>
   properties[timestamp] && properties[timestamp][0][1][0][1].start_date
 
+const parseMetaTitle = (properties, { metatitle }) =>
+  properties[metatitle] && properties[metatitle][0][0]
+
+const parseMetaDescription = (properties, { metadescription }) =>
+  properties[metadescription] && properties[metadescription][0][0]
+
+const parseMetaImage = (properties, { metaimage }) =>
+  properties[metaimage] && properties[metaimage][0][0]
+
 const parseAuthor = async (agent, properties, { author }) => {
   if (!properties[author]) { return }
   const id = properties[author][0][1][0][1]
@@ -109,8 +123,7 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
   const { type, content, description } = node.internal
 
   if (type === 'Article') {
-    const { slug, blurb, published, preview, author, timestamp, html } = JSON.parse(content)
-
+    const { slug, blurb, published, preview, author, timestamp, html, meta } = JSON.parse(content)
     createNodeField({ node, name: 'slug', value: slug })
     createNodeField({ node, name: 'blurb', value: blurb })
     createNodeField({ node, name: 'preview', value: preview})
@@ -118,10 +131,11 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
     createNodeField({ node, name: 'author', value: author })
     createNodeField({ node, name: 'timestamp', value: timestamp })
     createNodeField({ node, name: 'title', value: description })
+    createNodeField({ node, name: 'meta', value: meta })
     createPage({
       path: `/articles/${slug}`,
       component: require.resolve('./src/pages/article.js'),
-      context: { slug, blurb, preview, published, description, html }
+      context: { slug, blurb, preview, published, description, html, meta }
     })
   }
 }
