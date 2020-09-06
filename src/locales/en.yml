@@ -131,10 +131,14 @@ footer:
   legal: Legal
   terms: Terms & Conditions
   privacy: Privacy policy
-  newsletter: Newsletter
-  newsletterHelptext: Get updates on our progress; we won't spam you.
-  newsletterPlaceholder: you@example.com
   copyright: © 2020 Minimum Viable Ceremonies
+
+newsletter:
+  header: Stay up to date
+  helptext: Get updates on our progress. We won't spam you!
+  placeholder: you@example.com
+  success: We'll be in touch soon! 🙃
+  failure: That doesn't look like a valid email address! 😭
 
 themes:
   coordination:

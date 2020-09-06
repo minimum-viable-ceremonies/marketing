@@ -22,6 +22,7 @@ jobs:
           FRESHCHAT_HOST=${{ secrets.FRESHCHAT_HOST }}
           NOTION_COLLECTION_ID=${{ secrets.NOTION_COLLECTION_ID }}
           NOTION_COLLECTION_VIEW=${{ secrets.NOTION_COLLECTION_VIEW }}
+          FUNCTIONS_HOST=${{ secrets.FUNCTIONS_HOST }}
         write-mode: overwrite
     - run: npm install
     - run: npm run build

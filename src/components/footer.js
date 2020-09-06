@@ -2,6 +2,9 @@ import React from "react"
 import { useTranslation } from "react-i18next"
 
 import Squiggles from "./squiggles"
+import Newsletter from "./newsletter"
+
+import styles from "../styles/footer.scss"
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -9,13 +12,14 @@ const Footer = () => {
   return (
     <div id="footer">
       <Squiggles />
-      <div className="mb-8 flex flex-col md:flex-row w-full md:w-75 items-center justify-end">
-        <div className="md:mr-32 text-center md:text-left flex flex-col footer-contact">
-          <div><strong>{t('footer.contact')}</strong></div>
-          <div style={{ fontSize: "24px", color: "blue"}} className="mb-4">
-            <a href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a></div>
+      <div className="pb-8 pt-8 flex flex-col md:justify-center lg:justify-between md:flex-row md:max-w-screen-md sm:items-center md:items-start lg:max-w-screen-lg md:m-auto">
+        <div className="md:text-center md:text-left flex flex-col sm:items-center md:items-start footer-contact">
+          <div className="footer-title">{t('footer.contact')}</div>
+          <div className="mb-4">
+            <a style={{fontSize: "24px"}} className="mvc-link" href={`mailto:${t('footer.contactEmail')}`}>{t('footer.contactEmail')}</a>
+          </div>
         </div>
-        {false && <div className="mr-32 flex flex-col footer-company">
+        {false && <div className="flex flex-col footer-company">
           <div className="mb-4">
             <strong>{t('footer.company')}</strong>
           </div>
@@ -32,7 +36,7 @@ const Footer = () => {
             <a href="/notes">{t('footer.notes')}</a>
           </div>
         </div>}
-        {false && <div className="mr-32 flex flex-col footer-legal">
+        {false && <div className="flex flex-col footer-legal">
           <div className="mb-4">
             <strong>{t('footer.legal')}</strong>
           </div>
@@ -43,9 +47,9 @@ const Footer = () => {
             <a href="/privacy">{t('footer.privacy')}</a>
           </div>
         </div>}
-        {false && <div className="mr-32 flex flex-col footer-newsletter">
-          <div><strong>{t('footer.newsletter')}</strong></div>
-        </div>}
+        <div className="flex flex-col footer-newsletter">
+          <Newsletter />
+        </div>
       </div>
     </div>
   )
