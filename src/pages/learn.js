@@ -13,7 +13,7 @@ const ArticlesPage = () => {
     <Layout>
       <SEO page="articles" />
       <div className="m-auto lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm">
-        <div className="mt-24 ml-4 mr-4 mb-12 flex flex-col md:flex-row items-center">
+        <div className="mt-24 md:mt-4 ml-4 mr-4 mb-12 flex flex-col md:flex-row items-center">
           <div className="mr-12 md:w-1/2">
             <h1 className="mb-4 text-4xl">{t("articles.learning.title")}</h1>
             <p className="text-lg">{t("articles.learning.text")}</p>
