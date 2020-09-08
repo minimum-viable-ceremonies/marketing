@@ -3,7 +3,7 @@ import Confetti from "react-dom-confetti"
 import { useTranslation } from "react-i18next"
 import { useMatomo } from "@datapunt/matomo-tracker-react"
 
-import confettiData from "../data/confettiData"
+import { successData, failureData } from "../data/confettiData"
 
 import Loading from "./loading"
 
@@ -52,7 +52,7 @@ const Signup = () => {
           onChange={({ target: { value } }) => setEmail(value)}
         />
         <button disabled={loading} className={`${loading ? 'mvc-btn--loading' : ''} cta-link relative mvc-btn primary`} onClick={submit}>
-          <Confetti active={state === 'success'} config={confettiData} />
+          <Confetti active={state} config={state === 'success' ? successData : failureData} />
           {loading && <Loading size={20} />}
           <span>{t("common.go")}</span>
         </button>
