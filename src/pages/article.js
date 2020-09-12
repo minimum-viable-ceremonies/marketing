@@ -3,6 +3,8 @@ import React, { useRef, useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import "../data/locales"
+
 const ArticlePage = ({ pageContext: { description, html, meta } }) => {
 
   const articleRef = useRef()
