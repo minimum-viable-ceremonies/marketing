@@ -1,0 +1,11 @@
+@import 'colors';
+
+.article {
+  border-bottom: 2px solid $grey;
+
+  &__preview {
+    min-height: 300px;
+    background-position: center;
+    background-size: cover;
+  }
+}
