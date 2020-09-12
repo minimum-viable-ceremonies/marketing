@@ -20,12 +20,13 @@ jobs:
           MATOMO_SITE_ID=${{ secrets.MATOMO_SITE_ID }}
           FRESHCHAT_TOKEN=${{ secrets.FRESHCHAT_TOKEN }}
           FRESHCHAT_HOST=${{ secrets.FRESHCHAT_HOST }}
-          NOTION_COLLECTION_ID=${{ secrets.NOTION_COLLECTION_ID }}
-          NOTION_COLLECTION_VIEW=${{ secrets.NOTION_COLLECTION_VIEW }}
           FUNCTIONS_HOST=${{ secrets.FUNCTIONS_HOST }}
         write-mode: overwrite
     - run: npm install
     - run: npm run build
+      env:
+        NOTION_COLLECTION_ID: ${{ secrets.NOTION_COLLECTION_ID }}
+        NOTION_COLLECTION_VIEW: ${{ secrets.NOTION_COLLECTION_VIEW }}
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting:minimum-viable-marketing --project ${{ secrets.FIREBASE_DOMAIN }}
