@@ -16,6 +16,17 @@ gatsby develop
 gatsby build
 ```
 
+### ✍🏻 **Populating blog content**
+
+This site uses [Notion](https://notion.so) as a blogging platform, pulling in articles given in a certain list view.
+
+In order to pull in the articles from Notion, you'll need to find the collection id and the collection view id for a table via the Notion API, and populate the following environment variables:
+
+```shell
+NOTION_COLLECTION_ID="<collection_id>"
+NOTION_COLLECTION_VIEW="<collection_view_id>"
+```
+
 ### 💫 **Deploying.**
 
 Pushing to the master branch of this repo will automatically publish to firebase:

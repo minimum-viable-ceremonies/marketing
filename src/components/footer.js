@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import Squiggles from "./squiggles"
 import Newsletter from "./newsletter"
 
-import styles from "../styles/footer.scss"
+import "../styles/footer.scss"
 
 const Footer = () => {
   const { t } = useTranslation()
