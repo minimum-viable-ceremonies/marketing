@@ -21,7 +21,6 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
       slug: String
       blurb: String
       preview: String
-      published: Boolean
       timestamp: Date
       author: Author
     }
@@ -46,6 +45,7 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
     Object
       .entries(block)
       .filter(([id]) => blockIds.includes(id))
+      .filter(([_, { value: { properties } }]) => process.env.NODE_ENV === 'development' || parsePublished(properties, schema))
       .map(([_, { value: { id, properties } }]) => (
         notion.getPageById(id).then(({ title, titleString, content }) => (
           parseAuthor(agent, properties, schema).then(author => (
@@ -64,7 +64,6 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
                   blurb: parseBlurb(properties, schema),
                   preview: parsePreview(properties, schema),
                   timestamp: parseTimestamp(properties, schema),
-                  published: parsePublished(properties, schema),
                   meta: {
                     title: parseMetaTitle(properties, schema),
                     description: parseMetaDescription(properties, schema),
@@ -107,7 +106,7 @@ const parseMetaImage = (properties, { metaimage }) =>
   properties[metaimage] && properties[metaimage][0][0]
 
 const parseAuthor = async (agent, properties, { author }) => {
-  if (!properties[author]) { return }
+  if (!properties || !properties[author]) { return }
   const id = properties[author][0][1][0][1]
 
   if (!authors[id]) {
@@ -128,11 +127,10 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
   const { content, description } = node.internal
 
   if (node.contentType === 'Article') {
-    const { type, slug, blurb, published, preview, author, timestamp, html, meta } = JSON.parse(content)
+    const { type, slug, blurb, preview, author, timestamp, html, meta } = JSON.parse(content)
     createNodeField({ node, name: 'slug', value: slug })
     createNodeField({ node, name: 'blurb', value: blurb })
     createNodeField({ node, name: 'preview', value: preview})
-    createNodeField({ node, name: 'published', value: published })
     createNodeField({ node, name: 'author', value: author })
     createNodeField({ node, name: 'timestamp', value: timestamp })
     createNodeField({ node, name: 'title', value: description })
@@ -141,7 +139,7 @@ exports.onCreateNode = ({ node, actions: { createNodeField, createPage } }) => {
     createPage({
       path: `/articles/${slug}`,
       component: require.resolve('./src/pages/article.js'),
-      context: { slug, blurb, preview, published, description, html, meta }
+      context: { slug, blurb, preview, description, html, meta }
     })
   }
 }

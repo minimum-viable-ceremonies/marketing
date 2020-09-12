@@ -10,7 +10,6 @@ const Articles = ({ type }) => {
         edges {
           node {
             fields {
-              published
               blurb
               preview
               slug
@@ -25,7 +24,7 @@ const Articles = ({ type }) => {
     }`)
 
   return (
-    <div className="flex flex-col md:flex-row justify-around">
+    <div className="flex flex-wrap flex-col md:flex-row justify-around">
       {edges
         .sort((a, b) => a.timestamp > b.timestamp ? -1 : 1)
         .filter(({ node: { fields } }) => fields.type === type)

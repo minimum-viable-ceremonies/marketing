@@ -5,11 +5,11 @@ import { useTranslation } from "react-i18next"
 
 import "../styles/article.scss"
 
-const Article = ({ article: { published, blurb, preview, slug, author, timestamp, title } }) => {
+const Article = ({ article: { blurb, preview, slug, author, timestamp, title } }) => {
   const { t } = useTranslation()
 
   return (
-    <div className="article m-4 mb-24" style={{flexBasis: "50%"}}>
+    <div className="article p-4 mb-24" style={{flexBasis: "50%"}}>
       <Link to={`/articles/${slug}`}>
         <div className="article__preview mb-4" style={{backgroundImage: `url(${preview})`}} />
         <div className="article__meta mb-4">

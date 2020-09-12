@@ -1,8 +1,6 @@
 import React from "react"
 import { useTranslation } from "react-i18next"
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import Articles from "../components/articles"
 import Pocket from "../components/images/pocket"
 
@@ -10,7 +8,6 @@ const Learn = () => {
   const { t } = useTranslation()
 
   return <>
-    <SEO page="articles" />
     <div className="m-auto lg:max-w-screen-lg md:max-w-screen-md sm:max-w-screen-sm">
       <div className="mt-24 md:mt-4 ml-4 mr-4 mb-12 flex flex-col md:flex-row items-center">
         <div className="mr-12 md:w-1/2">
