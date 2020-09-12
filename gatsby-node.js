@@ -91,7 +91,7 @@ const parsePreview = (properties, { preview }) =>
   properties[preview] && properties[preview][0][0]
 
 const parsePublished = (properties, { published }) =>
-  !!properties[published]
+  properties[published] && properties[published] === 'Yes'
 
 const parseTimestamp = (properties, { timestamp }) =>
   properties[timestamp] && properties[timestamp][0][1][0][1].start_date
