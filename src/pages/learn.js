@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import Articles from "../components/articles"
 import Pocket from "../components/images/pocket"
 
-const ArticlesPage = () => {
+const Learn = () => {
   const { t } = useTranslation()
 
   return (
@@ -38,4 +38,4 @@ const ArticlesPage = () => {
   )
 }
 
-export default ArticlesPage
+export default Learn
