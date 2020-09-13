@@ -45,7 +45,7 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
     Object
       .entries(block)
       .filter(([id]) => blockIds.includes(id))
-      .filter(([_, { value: { properties } }]) => process.env.NODE_ENV === 'development' || parsePublished(properties, schema))
+      .filter(([_, { value: { properties } }]) => process.env.NODE_ENV === 'development' || console.log(parsePublished(properties, schema), properties[schema.published]) || parsePublished(properties, schema))
       .map(([_, { value: { id, properties } }]) => (
         notion.getPageById(id).then(({ title, titleString, content }) => (
           parseAuthor(agent, properties, schema).then(author => (
