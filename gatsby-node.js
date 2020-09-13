@@ -31,13 +31,13 @@ exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
   `)
 )
 
-exports.sourceNodes = ({ reporter, createContentDigest, actions: { createNode } }) => {
+exports.sourceNodes = async ({ reporter, createContentDigest, actions: { createNode } }) => {
   if (!process.env.NOTION_COLLECTION_ID || !process.env.NOTION_COLLECTION_VIEW) { return }
   const agent = createAgent()
   const { start, end, error } = reporter.activityTimer('fetch articles from Notion')
   start()
 
-  agent.queryCollection({
+  await agent.queryCollection({
     collectionId: process.env.NOTION_COLLECTION_ID,
     collectionViewId: process.env.NOTION_COLLECTION_VIEW,
     loader: { type: 'table' }
