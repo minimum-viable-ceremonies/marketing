@@ -87,8 +87,8 @@ html {
     content: "";
     position: absolute;
     width: 0;
-    height: 4px;
-    bottom: -4px;
+    height: 3px;
+    bottom: -8px;
     left: 0;
     background-color: $morning-blue;
     transition: all 0.3s ease-in-out;
@@ -97,26 +97,25 @@ html {
 
 .cta-link {
   font-size: 18px;
-  font-weight: bold;
   line-height: 24px;
   padding-right: 10px;
+  font-weight: bold;
   color: $primary;
 
   &:after {
     content: "→";
-    display: inline-block;
-    transform: translateX(2px);
+    position: relative;
+    left: 0;
     color: $primary;
-    transition: transform 400ms ease 0s;
     padding-left: 4px;
+    transition: all 300ms ease 0s;
   }
+
   &:hover {
     color: $morning-blue;
-    transition: color 300ms ease 0s;
     &:after {
-      transform: translateX(6px);
+      left: 4px;
       color: $morning-blue;
-      transition: color 300ms ease 0s;
     }
   }
   &:active {
@@ -128,10 +127,28 @@ html {
   color: $grey-text;
   background: transparent;
   padding: 8px 12px;
-  border: 1px solid;
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
+
+  &.cta-link {
+    font-weight: 400;
+    box-shadow: 0 0 0 1px $grey-text;
+    transition: all 300ms ease 0s;
+
+    &:after {
+      color: $grey-text;
+    }
+
+    &:hover {
+      font-weight: 700;
+      box-shadow: 0 0 0 2px $morning-blue;
+
+      &:after {
+        color: $morning-blue;
+      }
+    }
+  }
 
   &--loading {
     color: $primary !important;

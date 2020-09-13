@@ -5,6 +5,32 @@ const parameterize = require('parameterize')
 
 const authors = {}
 
+exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
+  createTypes(`
+    type Article implements Node {
+      fields: ArticleField
+    }
+    type Author {
+      email: String
+      name: String
+      avatar: String
+    }
+    type ArticleMeta {
+      title: String
+      blurb: String
+      image: String
+    }
+    type ArticleField {
+      type: String
+      slug: String
+      author: Author
+      html: String
+      timestamp: Date
+      meta: ArticleMeta
+    }
+  `)
+)
+
 exports.sourceNodes = async ({ reporter, createContentDigest, actions: { createNode } }) => {
   if (!process.env.NOTION_COLLECTION_ID || !process.env.NOTION_COLLECTION_VIEW) { return }
   const agent = createAgent()
