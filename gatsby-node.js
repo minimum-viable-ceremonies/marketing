@@ -38,6 +38,7 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
     collectionViewId: process.env.NOTION_COLLECTION_VIEW,
     loader: { type: 'table' }
   }).then(({ result: { blockIds }, recordMap: { collection, block } }) => {
+    console.log(blockIds, collection, block)
     const schema = Object.entries(Object.values(collection)[0].value.schema)
       .map(([key, { name }]) => [name, key])
       .reduce((result, [name, key]) => ({ ...result, [name]: key }), {})
