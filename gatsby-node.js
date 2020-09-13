@@ -5,32 +5,6 @@ const parameterize = require('parameterize')
 
 const authors = {}
 
-exports.createSchemaCustomization = ({ actions: { createTypes } }) => (
-  createTypes(`
-    type Article implements Node {
-      fields: ArticleField
-    }
-    type Author {
-      email: String
-      name: String
-      avatar: String
-    }
-    type ArticleMeta {
-      title: String
-      blurb: String
-      image: String
-    }
-    type ArticleField {
-      type: String
-      slug: String
-      author: Author
-      html: String
-      timestamp: Date
-      meta: ArticleMeta
-    }
-  `)
-)
-
 exports.sourceNodes = async ({ reporter, createContentDigest, actions: { createNode } }) => {
   if (!process.env.NOTION_COLLECTION_ID || !process.env.NOTION_COLLECTION_VIEW) { return }
   const agent = createAgent()
@@ -46,39 +20,41 @@ exports.sourceNodes = async ({ reporter, createContentDigest, actions: { createN
       .map(([key, { name }]) => [name, key])
       .reduce((result, [name, key]) => ({ ...result, [name]: key }), {})
 
-    Object
-      .entries(block)
-      .filter(([id]) => blockIds.includes(id))
-      .filter(([_, { value: { properties } }]) => process.env.NODE_ENV === 'development' || parsePublished(properties, schema))
-      .map(([_, { value: { id, properties } }]) => (
-        notion.getPageById(id).then(({ titleString, content }) => (
-          parseAuthor(agent, properties, schema).then(author => (
-            createNode({
-              id,
-              parent: null,
-              children: [],
-              contentType: 'Article',
-              internal: {
-                type: 'Article',
-                mediaType: 'text/html',
-                content: JSON.stringify({
-                  author,
-                  slug: parameterize(titleString),
-                  type: parseType(properties, schema),
-                  timestamp: parseTimestamp(properties, schema),
-                  meta: {
-                    title: titleString,
-                    blurb: parseBlurb(properties, schema),
-                    image: parsePreview(properties, schema),
-                  },
-                  html: content
-                }),
-                contentDigest: createContentDigest(id)
-              }
-            })
+    return Promise.all(
+      Object
+        .entries(block)
+        .filter(([id]) => blockIds.includes(id))
+        .filter(([_, { value: { properties } }]) => process.env.NODE_ENV === 'development' || parsePublished(properties, schema))
+        .map(([_, { value: { id, properties } }]) => (
+          notion.getPageById(id).then(({ titleString, content }) => (
+            parseAuthor(agent, properties, schema).then(author => (
+              createNode({
+                id,
+                parent: null,
+                children: [],
+                contentType: 'Article',
+                internal: {
+                  type: 'Article',
+                  mediaType: 'text/html',
+                  content: JSON.stringify({
+                    author,
+                    slug: parameterize(titleString),
+                    type: parseType(properties, schema),
+                    timestamp: parseTimestamp(properties, schema),
+                    meta: {
+                      title: titleString,
+                      blurb: parseBlurb(properties, schema),
+                      image: parsePreview(properties, schema),
+                    },
+                    html: content
+                  }),
+                  contentDigest: createContentDigest(id)
+                }
+              })
+            ))
           ))
         ))
-      ))
+    )
   }).then(end).catch(error)
 }
 
@@ -129,8 +105,8 @@ exports.onCreateNode = ({ node, getNode, actions: { createNodeField, createPage 
   }
 }
 
-exports.createPages = ({ graphql, actions: { createPage } }) => (
-  graphql(`query {
+exports.createPages = async ({ graphql, actions: { createPage } }) => (
+  await graphql(`query {
     allArticle {
       edges {
         node {
@@ -141,7 +117,6 @@ exports.createPages = ({ graphql, actions: { createPage } }) => (
     }
   }`).then(({ data }) => (
     data.allArticle.edges.forEach(({ node: { fields } }) => (
-      console.log(fields) ||
       createPage({
         path: `/articles/${fields.slug}`,
         component: require.resolve('./src/pages/article.js'),
