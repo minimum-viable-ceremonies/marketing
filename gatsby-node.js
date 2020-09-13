@@ -141,6 +141,7 @@ exports.createPages = ({ graphql, actions: { createPage } }) => (
     }
   }`).then(({ data }) => (
     data.allArticle.edges.forEach(({ node: { fields } }) => (
+      console.log(fields) ||
       createPage({
         path: `/articles/${fields.slug}`,
         component: require.resolve('./src/pages/article.js'),
