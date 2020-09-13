@@ -20,7 +20,7 @@ const ArticlePage = ({ pageContext: { html, meta } }) => {
   return (
     <Layout>
       <SEO page="article" meta={meta} />
-      <div ref={articleRef} className="article mt-24 md:mt-12 m-auto max-w-screen-sm">
+      <div ref={articleRef} className="article pb-24 mt-24 md:mt-12 m-auto max-w-screen-sm">
         <h1 className="mb-4">{title}</h1>
         <div dangerouslySetInnerHTML={{__html: html}} />
       </div>
