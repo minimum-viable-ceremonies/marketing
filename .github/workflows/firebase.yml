@@ -23,7 +23,6 @@ jobs:
           FUNCTIONS_HOST=${{ secrets.FUNCTIONS_HOST }}
         write-mode: overwrite
     - run: npm install
-    - run: npm run clean
     - run: npm run build
       env:
         NOTION_COLLECTION_ID: ${{ secrets.NOTION_COLLECTION_ID }}
