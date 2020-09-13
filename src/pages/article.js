@@ -15,6 +15,13 @@ const ArticlePage = ({ pageContext: { html, meta } }) => {
       parentElement.style.opacity = "1"
       parentElement.nextElementSibling.style.opacity = "0"
     })
+
+    articleRef.current.querySelectorAll('img.notion-emoji').forEach(emoji => {
+      const span = document.createElement('span')
+      span.innerHTML = emoji.altText
+
+      emoji.parentElement.replaceChild(span, emoji)
+    })
   }, [articleRef])
 
   return (
