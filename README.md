@@ -57,4 +57,9 @@ FRESHCHAT_HOST=https://wchat.au.freshchat.com
 
 ### 📖 **Translating**
 
-Visit our [Transifex page](https://www.transifex.com/babble/minimum-viable-ceremonies) to translate Minimum Viable Ceremonies into your language!
+Visit our [translation page](https://translate.minimal.cards) to translate Minimum Viable Ceremonies into your language!
+
+In order to publish or sync translations, you'll need to set an API key for Crowdin:
+```shell
+CROWDIN_API_KEY=<API_TOKEN>
+```
