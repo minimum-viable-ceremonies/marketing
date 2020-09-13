@@ -18,7 +18,7 @@ const ArticlePage = ({ pageContext: { html, meta } }) => {
 
     articleRef.current.querySelectorAll('img.notion-emoji').forEach(emoji => {
       const span = document.createElement('span')
-      span.innerHTML = emoji.altText
+      span.innerHTML = emoji.altText || emoji.ariaLabel || ''
 
       emoji.parentElement.replaceChild(span, emoji)
     })
