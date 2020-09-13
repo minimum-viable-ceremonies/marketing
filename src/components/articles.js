@@ -10,13 +10,11 @@ const Articles = ({ type }) => {
         edges {
           node {
             fields {
-              blurb
-              preview
               slug
               timestamp
-              title
               type
               author { name avatar }
+              meta { title blurb image }
             }
           }
         }

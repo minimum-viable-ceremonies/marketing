@@ -9,7 +9,7 @@ import "../data/locales"
 const LearnPage = () => {
   return (
     <Layout>
-      <SEO page="articles" />
+      <SEO page="learn" />
       <Learn />
     </Layout>
   )
