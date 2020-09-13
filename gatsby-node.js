@@ -38,7 +38,6 @@ exports.createPagesStatefully = ({ reporter, actions: { createNode }, createCont
     collectionViewId: process.env.NOTION_COLLECTION_VIEW,
     loader: { type: 'table' }
   }).then(({ result: { blockIds }, recordMap: { collection, block } }) => {
-    console.log(blockIds, collection, block)
     const schema = Object.entries(Object.values(collection)[0].value.schema)
       .map(([key, { name }]) => [name, key])
       .reduce((result, [name, key]) => ({ ...result, [name]: key }), {})
@@ -92,6 +91,7 @@ const parsePreview = (properties, { preview }) =>
   properties[preview] && properties[preview][0][0]
 
 const parsePublished = (properties, { published }) =>
+  console.log(properties, published) ||
   properties[published] && properties[published] === 'Yes'
 
 const parseTimestamp = (properties, { timestamp }) =>
