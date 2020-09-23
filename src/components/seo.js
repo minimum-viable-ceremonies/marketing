@@ -34,6 +34,9 @@ const SEO = ({ page = 'home', params = {}, meta = {} }) => {
         property: `og:image`,
         content: image,
       }, {
+        property: `og:url`,
+        content: url,
+      }, {
         name: `twitter:card`,
         content: `summary`,
       }, {
