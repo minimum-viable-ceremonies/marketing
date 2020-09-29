@@ -21,6 +21,7 @@ jobs:
           FRESHCHAT_TOKEN=${{ secrets.FRESHCHAT_TOKEN }}
           FRESHCHAT_HOST=${{ secrets.FRESHCHAT_HOST }}
           FUNCTIONS_HOST=${{ secrets.FUNCTIONS_HOST }}
+          SLACK_CLIENT_ID=${{ secrets.SLACK_CLIENT_ID }}
         write-mode: overwrite
     - run: npm install
     - run: npm run build

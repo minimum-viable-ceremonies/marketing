@@ -1,4 +1,4 @@
-describe('Create ceremony', () => {
+describe('Marketing page', () => {
   beforeEach(() => {
     cy.visit('')
   })
@@ -14,4 +14,3 @@ describe('Create ceremony', () => {
     cy.get('#footer').contains('Stay up to date')
   })
 })
-
