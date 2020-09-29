@@ -4,6 +4,7 @@ common:
   roomUrl: https://mvc.minimal.cards
   go: Go
   updated: Updated on {{timestamp}}
+  tryAgain: Try again
 header:
   features: Features
   learning: Learn
@@ -46,22 +47,22 @@ how:
   subtitle: Start with our list of optimized, battle-tested, and proven ceremonies. Or make your own.
   description: "Build a Minimum Viable Ceremony that has at least one ceremony across these 4 themes:"
   themes:
-    - 
+    -
       title: Coordination
       description: Description for coordination
-    - 
+    -
       title: Delivery
       description: Description for delivery
-    - 
+    -
       title: Innovation
       description: Description for innovation
-    - 
+    -
       title: Culture
       description: Description for culture
   cards:
-    - 
+    -
       name: Ready to get started?
-    - 
+    -
       name: Team retreat
       icon: '🏝'
       theme: culture
@@ -73,7 +74,7 @@ how:
           -  Horizon planning
           - Assumptions Mapping
           - Team Building
-    - 
+    -
       name: Demo
       icon: '🎉'
       theme: coordination
@@ -82,7 +83,7 @@ how:
         A Demo is an opportunity for people to share what they have accomplished recently with the team. It gives people a chance to receive acknowledgement for their work and to share learnings.
 
         Each person can share a small presentation, a video clip of what they've been working on, or just give a status update.
-    - 
+    -
       name: Design review
       icon: '🖍'
       theme: delivery
@@ -91,7 +92,7 @@ how:
         Design Reviews bring developers, managers, and other team members together have to review the in-progress designs before they go into the build pipeline.
 
         Designs are often checked for technical considerations like component libraries, technical debt, completeness of design, or application architecture.
-    - 
+    -
       name: Hackathon
       icon: '🍕'
       theme: innovation
@@ -101,7 +102,7 @@ how:
           - a quick-win feature,
           - a prototype for a future direction that hasn't been considered yet, or
           - an excellent learning opportunity.
-    - 
+    -
       name: Stand-up
       icon: '👋'
       theme: coordination
@@ -114,13 +115,13 @@ how:
           - What do you plan to work on next?
           - Do you have any work that can't be progressed forwards and why?
 features:
-  - 
+  -
     title: Facilitate
     description: Share the facilitation role across members of the team to increase engagement.
-  - 
+  -
     title: Schedule
     description: Agree quickly and effectively on a process that works for everyone. Pick the time and format for every meeting.
-  - 
+  -
     title: Share
     description: Make sure everyone is on the same page. Track your progress.
 getStarted:
@@ -167,6 +168,15 @@ articles:
   updates:
     title: Updates
     text: Updates from the team at Minimum Viable Ceremonies
+slack:
+  success:
+    title: Congratulations!
+    helptext: You've successfully installed MVC to your slack workspace. 🥳
+    instruction: "To get started, type the following into any channel in your workspace:"
+    code: /mvc [Your room name]
+  failure:
+    title: Oops!
+    helptext: Something went wrong with that request, sorry! Please give it another go.
 metadata:
   site:
     title: Minimum Viable Ceremonies
