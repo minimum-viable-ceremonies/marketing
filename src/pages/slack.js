@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { useMatomo } from "@datapunt/matomo-tracker-react"
-import { useQueryParam } from "gatsby-query-params"
+import { document } from "browser-monads"
 import Confetti from "react-dom-confetti"
 
 import Layout from "../components/layout"
@@ -13,7 +13,7 @@ import { successData, failureData } from "../data/confettiData"
 const SlackPage = () => {
   const { t } = useTranslation()
   const { trackEvent } = useMatomo()
-  const result = useQueryParam('result', 'failure')
+  const result = new URLSearchParams(document.location.search).get('result') || 'failure'
   const [confetti, setConfetti] = useState(false)
   useEffect(() => { setConfetti(true) }, [])
 
