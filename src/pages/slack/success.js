@@ -9,7 +9,7 @@ import SEO from "../../components/seo"
 import "../../data/locales"
 import { successData } from "../../data/confettiData"
 
-const SlackPage = () => {
+const SlackSuccessPage = () => {
   const { t } = useTranslation()
   const { trackEvent } = useMatomo()
   const [confetti, setConfetti] = useState(false)
@@ -52,4 +52,4 @@ const SlackPage = () => {
   )
 }
 
-export default SlackPage
+export default SlackSuccessPage
