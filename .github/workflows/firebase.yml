@@ -26,8 +26,7 @@ jobs:
     - run: npm install
     - run: npm run build
       env:
-        NOTION_COLLECTION_ID: ${{ secrets.NOTION_COLLECTION_ID }}
-        NOTION_COLLECTION_VIEW: ${{ secrets.NOTION_COLLECTION_VIEW }}
+        GHOST_API_KEY: ${{ secrets.GHOST_API_KEY }}
     - uses: w9jds/firebase-action@master
       with:
         args: deploy --only hosting:minimum-viable-marketing --project ${{ secrets.FIREBASE_DOMAIN }}
