@@ -28,6 +28,9 @@ In order to pull in the articles from Ghost, you'll need to supply a content API
 GHOST_API_KEY="<token_id>"
 ```
 
+Running `gatsby develop` will automatically pull in any new blog content.
+Note that in order to update existing articles, you'll need to run `gatsby clean` beforehand ✌️
+
 ### 💫 **Deploying.**
 
 Pushing to the master branch of this repo will automatically publish to firebase:
