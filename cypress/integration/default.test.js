@@ -13,4 +13,10 @@ describe('Marketing page', () => {
     cy.get('#footer').contains('Contact us')
     cy.get('#footer').contains('Stay up to date')
   })
+
+  it('Footer links to legal page', () => {
+    cy.get('#footer').contains('Legal')
+    cy.get('#footer').contains('Terms & Conditions')
+    cy.get('#footer').contains('Privacy policy')
+  })
 })

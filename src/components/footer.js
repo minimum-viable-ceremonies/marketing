@@ -36,17 +36,17 @@ const Footer = () => {
             <a href="/notes">{t('footer.notes')}</a>
           </div>
         </div>}
-        {false && <div className="flex flex-col footer-legal">
+        <div className="flex flex-col footer-legal text-center md:text-left">
           <div className="mb-4">
-            <strong>{t('footer.legal')}</strong>
+            <strong><a className="mvc-link" href="/legal">{t('footer.legal')}</a></strong>
           </div>
           <div className="mb-4">
-            <a href="/terms">{t('footer.terms')}</a>
+            <a className="mvc-link" href="/articles/terms-and-conditions">{t('footer.terms')}</a>
           </div>
           <div className="mb-4">
-            <a href="/privacy">{t('footer.privacy')}</a>
+            <a className="mvc-link" href="/articles/privacy-notice">{t('footer.privacy')}</a>
           </div>
-        </div>}
+        </div>
         <div className="flex flex-col footer-newsletter">
           <Newsletter />
         </div>
