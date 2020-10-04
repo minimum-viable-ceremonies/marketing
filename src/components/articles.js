@@ -25,7 +25,7 @@ const Articles = ({ type }) => {
   return (
     <div className="flex flex-wrap flex-col md:flex-row justify-around">
       {edges
-        .sort((a, b) => a.published_at > b.published_at ? -1 : 1)
+        .sort((a, b) => a.published_at > b.published_at ? 1 : -1)
         .filter(({ node }) => (node.primary_tag || {}).name === type)
         .map(({ node }) => <Article key={node.slug} article={node} />)
       }
