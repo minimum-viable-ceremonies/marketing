@@ -17,10 +17,10 @@ const LegalPage = () => {
         <p className="mb-4">{t("legal.helptext")}</p>
         <ul>
           <li className="mb-4">
-            <a href="articles/terms-and-conditions" className="mvc-link">{t("footer.terms")}</a>
+            <a href="/articles/terms-and-conditions" className="mvc-link">{t("footer.terms")}</a>
           </li>
           <li className="mb-4">
-            <a href="articles/privacy-notice" className="mvc-link">{t("footer.privacy")}</a>
+            <a href="/articles/privacy-notice" className="mvc-link">{t("footer.privacy")}</a>
           </li>
         </ul>
       </div>
