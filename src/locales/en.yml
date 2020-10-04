@@ -158,6 +158,9 @@ themes:
   innovation:
     name: Innovation
     description: Stay relevant. Grow and explore new ideas with innovation ceremonies.
+legal:
+  title: Legal
+  helptext: "TL;DR: We don't own or sell your data, and you can download or delete it at any time. Please get in touch if you're concerned 🙃"
 articles:
   learning:
     title: Minimal Learnings ✨
