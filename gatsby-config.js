@@ -13,6 +13,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://ghost.minimal.cards`,
+        contentApiKey: process.env.GHOST_API_KEY,
+      },
+    },
     `gatsby-plugin-react-svg`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

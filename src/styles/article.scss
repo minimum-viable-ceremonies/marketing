@@ -8,4 +8,163 @@
     background-position: center;
     background-size: cover;
   }
+
+  .kg-bookmark {
+    &-container {
+      margin-bottom: 24px;
+      font-size: 12px;
+      display: flex;
+      min-height: 148px;
+      text-decoration: none;
+      border-radius: 3px;
+      box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+
+      &:hover {
+        text-decoration: none;
+        box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+      }
+    }
+
+    &-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    &-title {
+      font-size: 1.6em;
+      line-height: 1.5em;
+      font-weight: 600;
+      transition: color 0.2s ease-in-out;
+    }
+
+    &-description {
+      display: -webkit-box;
+      overflow-y: hidden;
+      margin-top: 12px;
+      max-height: 48px;
+      font-size: 1.5em;
+      line-height: 1.5em;
+      font-weight: 400;
+
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    &-thumbnail {
+      position: relative;
+      min-width: 33%;
+      max-height: 100%;
+
+      img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: auto;
+        height: 100%;
+        border-radius: 0 3px 3px 0;
+        object-fit: cover;
+      }
+    }
+
+    &-metadata {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 14px;
+      font-size: 1.5em;
+      font-weight: 400;
+    }
+
+    &-icon {
+      margin-right: 8px;
+      width: 22px;
+      height: 22px;
+      margin-bottom: 0;
+    }
+
+    &-author {
+      line-height: 1.5em;
+    }
+
+    &-author:after {
+      content: "•";
+      margin: 0 6px;
+    }
+
+    &-publisher {
+      overflow: hidden;
+      max-width: 240px;
+      line-height: 1.5em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+
+  blockquote {
+    padding: 16px;
+    background: $blockquote;
+    margin-bottom: 1em;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  img {
+    max-height: 240px;
+  }
+
+  ul, ol, li {
+    list-style: disc;
+  }
+  li {
+    margin-left: 1em;
+  }
+
+  &__content {
+    h1, h2, h3, h4, h5 {
+      margin-bottom: 1em;
+    }
+    img, ul, ol, li, p {
+      margin-bottom: 2em;
+    }
+
+    code {
+      background: $grey;
+      padding: 4px;
+      margin: 4px;
+      border-radius: 8px;
+    }
+
+    p {
+      line-height: 1.6em;
+    }
+
+    a:not(.kg-bookmark-container) {
+      transition: color 0.3s ease-in-out;
+      position: relative;
+      color: $dusk-blue;
+
+      &:hover {
+        color: $morning-blue;
+
+        &:before { width: 100%; }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: -4px;
+        left: 0;
+        background-color: $morning-blue;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
 }

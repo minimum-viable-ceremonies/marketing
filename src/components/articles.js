@@ -4,18 +4,19 @@ import { useStaticQuery, graphql } from "gatsby"
 import Article from "../components/article"
 
 const Articles = ({ type }) => {
-  const { allArticle: { edges } } = useStaticQuery(graphql`
+  const { allGhostPost: { edges } } = useStaticQuery(graphql`
     query Articles {
-      allArticle {
+      allGhostPost {
         edges {
           node {
-            fields {
-              slug
-              timestamp
-              type
-              author { name avatar }
-              meta { title blurb image }
-            }
+            slug
+            title
+            feature_image
+            custom_excerpt
+            html
+            published_at
+            primary_tag { name }
+            authors { name }
           }
         }
       }
@@ -24,9 +25,9 @@ const Articles = ({ type }) => {
   return (
     <div className="flex flex-wrap flex-col md:flex-row justify-around">
       {edges
-        .sort((a, b) => a.timestamp > b.timestamp ? -1 : 1)
-        .filter(({ node: { fields } }) => fields.type === type)
-        .map(({ node: { fields } }) => <Article key={fields.slug} article={fields} />)
+        .sort((a, b) => a.published_at > b.published_at ? -1 : 1)
+        .filter(({ node }) => (node.primary_tag || {}).name === type)
+        .map(({ node }) => <Article key={node.slug} article={node} />)
       }
     </div>
   )

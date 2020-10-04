@@ -1,12 +1,11 @@
-import React, { useRef, useMemo, useEffect } from "react"
+import React, { useRef, useEffect } from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import "../data/locales"
 
-const ArticlePage = ({ pageContext: { html, meta } }) => {
-  const title = useMemo(() => meta ? meta.title : '', [meta])
+const ArticlePage = ({ pageContext: { slug, html, title, custom_excerpt, featured_image } }) => {
   const articleRef = useRef()
   useEffect(() => {
     if (!articleRef.current) { return }
@@ -15,21 +14,19 @@ const ArticlePage = ({ pageContext: { html, meta } }) => {
       parentElement.style.opacity = "1"
       parentElement.nextElementSibling.style.opacity = "0"
     })
-
-    articleRef.current.querySelectorAll('img.notion-emoji').forEach(emoji => {
-      const span = document.createElement('span')
-      span.innerHTML = emoji.altText || emoji.ariaLabel || ''
-
-      emoji.parentElement.replaceChild(span, emoji)
-    })
   }, [articleRef])
 
   return (
     <Layout>
-      <SEO page="article" meta={meta} />
+      <SEO page="article" meta={{
+        title: title,
+        description: custom_excerpt,
+        url: `${document.location.origin}/articles/${slug}`,
+        image: featured_image
+      }} />
       <div ref={articleRef} className="article pb-24 mt-24 md:mt-12 m-auto max-w-screen-sm">
-        <h1 className="mb-4">{title}</h1>
-        <div dangerouslySetInnerHTML={{__html: html}} />
+        <h1 className="mb-6">{title}</h1>
+        <div className="article__content" dangerouslySetInnerHTML={{__html: html}} />
       </div>
     </Layout>
   )
