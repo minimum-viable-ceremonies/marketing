@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from "react"
+import { document } from "browser-monads"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
