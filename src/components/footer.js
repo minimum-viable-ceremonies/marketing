@@ -41,10 +41,10 @@ const Footer = () => {
             <strong><a className="mvc-link" href="/legal">{t('footer.legal')}</a></strong>
           </div>
           <div className="mb-4">
-            <a className="mvc-link" href="/articles/terms-and-conditions">{t('footer.terms')}</a>
+            <a className="mvc-link" href="/articles/terms">{t('footer.terms')}</a>
           </div>
           <div className="mb-4">
-            <a className="mvc-link" href="/articles/privacy-notice">{t('footer.privacy')}</a>
+            <a className="mvc-link" href="/articles/privacy">{t('footer.privacy')}</a>
           </div>
         </div>
         <div className="flex flex-col footer-newsletter">

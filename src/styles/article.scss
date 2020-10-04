@@ -8,4 +8,68 @@
     background-position: center;
     background-size: cover;
   }
+
+  blockquote {
+    padding: 16px;
+    background: $blockquote;
+    margin-bottom: 1em;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  img {
+    max-height: 240px;
+  }
+
+  ul, ol, li {
+    list-style: disc;
+  }
+  li {
+    margin-left: 1em;
+  }
+
+  &__content {
+    h1, h2, h3, h4, h5 {
+      margin-bottom: 1em;
+    }
+    img, ul, ol, li, p {
+      margin-bottom: 2em;
+    }
+
+    code {
+      background: $grey;
+      padding: 4px;
+      margin: 4px;
+      border-radius: 8px;
+    }
+
+    p {
+      line-height: 1.6em;
+    }
+
+    a {
+      transition: color 0.3s ease-in-out;
+      position: relative;
+      color: $dusk-blue;
+
+      &:hover {
+        color: $morning-blue;
+
+        &:before { width: 100%; }
+      }
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: -4px;
+        left: 0;
+        background-color: $morning-blue;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
 }

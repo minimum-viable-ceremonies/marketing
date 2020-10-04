@@ -18,13 +18,14 @@ gatsby build
 
 ### ✍🏻 **Populating blog content**
 
-This site uses [Notion](https://notion.so) as a blogging platform, pulling in articles given in a certain list view.
+This site uses [Ghost](https://ghost.org) as a blogging platform, pulling in articles given in a certain list view.
 
-In order to pull in the articles from Notion, you'll need to find the collection id and the collection view id for a table via the Notion API, and populate the following environment variables:
+Our ghost content is hosted at [https://ghost.minimal.cards](https://ghost.minimal.cards)
+
+In order to pull in the articles from Ghost, you'll need to supply a content API token:
 
 ```shell
-NOTION_COLLECTION_ID="<collection_id>"
-NOTION_COLLECTION_VIEW="<collection_view_id>"
+GHOST_API_KEY="<token_id>"
 ```
 
 ### 💫 **Deploying.**
