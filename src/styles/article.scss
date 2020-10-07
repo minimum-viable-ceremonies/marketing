@@ -9,6 +9,13 @@
     background-size: cover;
   }
 
+  .kg-embed-card {
+    iframe {
+      width: 100%;
+      max-height: 400px;
+    }
+  }
+
   .kg-bookmark {
     &-container {
       margin-bottom: 24px;
