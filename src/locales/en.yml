@@ -174,11 +174,11 @@ articles:
 slack:
   install:
     title: Let's get started!
-    helptext: Start free-to-use rooms easily from your slack channel. Get everyone involved by messaging them where they are already!
+    helptext: Start free-to-use rooms easily from your Slack channel. Get everyone involved by messaging them where they are already!
     callToAction: Add MVC to your Slack team
   success:
     title: Congratulations!
-    helptext: You've successfully installed MVC to your slack workspace. 🥳
+    helptext: You've successfully installed MVC to your Slack workspace. 🥳
     instruction: "To get started, type the following into any channel in your workspace:"
     code: /mvc [Your room name]
   failure:
