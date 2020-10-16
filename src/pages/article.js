@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { useMatomo } from "@datapunt/matomo-tracker-react"
 import { document } from "browser-monads"
 import { Link } from "gatsby"
 
@@ -8,7 +9,11 @@ import SEO from "../components/seo"
 import "../data/locales"
 
 const ArticlePage = ({ pageContext: { slug, html, title, custom_excerpt, feature_image, primary_tag } }) => {
+  const { trackPageView } = useMatomo()
   const { name } = primary_tag || {}
+
+  useEffect(() => { trackPageView() }, [trackPageView])
+
   return (
     <Layout breadcrumb={<Link to="/learn">Back</Link>}>
       <SEO page="article" meta={{
