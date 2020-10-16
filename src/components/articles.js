@@ -23,7 +23,7 @@ const Articles = ({ type }) => {
     }`)
 
   return (
-    <div className="flex flex-wrap flex-col md:flex-row justify-around">
+    <div className="flex flex-wrap flex-col md:flex-row">
       {edges
         .filter(({ node }) => (node.primary_tag || {}).name === type)
         .map(({ node }) => <Article key={node.slug} article={node} />)
