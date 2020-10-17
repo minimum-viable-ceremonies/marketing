@@ -1,7 +1,5 @@
 import React from "react"
-import ReactDOM from "react-dom"
 import { useTranslation } from "react-i18next"
-import { document } from "browser-monads"
 
 import "../styles/help.scss"
 

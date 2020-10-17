@@ -1,4 +1,4 @@
-describe('Legal page', () => {
+describe('Help page', () => {
   beforeEach(() => {
     cy.visit('/help')
   })
