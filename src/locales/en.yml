@@ -184,6 +184,10 @@ slack:
   failure:
     title: Oops!
     helptext: Something went wrong with that request, sorry! Please give it another go.
+help:
+  title: Having trouble?
+  description: Sorry about that! We're here to help! Feel free to send us a message, we'll get to the bottom of it together 🥳
+  emailUs: Don't trust that mysterious box over there? You can also reach us via email at
 metadata:
   site:
     title: Minimum Viable Ceremonies

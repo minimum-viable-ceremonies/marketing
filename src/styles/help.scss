@@ -1,0 +1,16 @@
+.help {
+
+  &__chat {
+    min-width: 420px;
+    position: relative;
+    min-height: calc(100vh - 200px);
+
+    .fc-widget-normal {
+      position: absolute !important;
+      min-width: 100%;
+      max-height: calc(100% - 40px) !important;
+      bottom: 0;
+      right: 0;
+    }
+  }
+}
