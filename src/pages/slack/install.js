@@ -5,7 +5,8 @@ import { useMatomo } from "@datapunt/matomo-tracker-react"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-import "../../data/locales"
+import initTranslations from "../../locales/react"
+initTranslations('marketing')
 
 const SlackInstallPage = () => {
   const { t } = useTranslation()

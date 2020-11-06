@@ -4,7 +4,8 @@ import Layout from "../components/layout"
 import Learn from "../components/learn"
 import SEO from "../components/seo"
 
-import "../data/locales"
+import initTranslations from "../locales/react"
+initTranslations('marketing')
 
 const LearnPage = () => {
   return (

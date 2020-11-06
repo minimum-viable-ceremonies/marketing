@@ -4,7 +4,8 @@ import { useTranslation } from "react-i18next"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import "../data/locales"
+import initTranslations from "../locales/react"
+initTranslations('marketing')
 
 const LegalPage = () => {
   const { t } = useTranslation()
