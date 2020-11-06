@@ -11,7 +11,8 @@ import Features from "../components/features"
 import GetStarted from "../components/getStarted"
 import Testimonials from "../components/testimonials"
 
-import "../data/locales"
+import initTranslations from "../locales/react"
+initTranslations('marketing')
 
 const IndexPage = () => {
   const { trackPageView } = useMatomo()

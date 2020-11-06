@@ -5,7 +5,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Help from "../components/help"
 
-import "../data/locales"
+import initTranslations from "../locales/react"
+initTranslations('marketing')
 
 const HelpPage = () => {
   const { trackPageView } = useMatomo()

@@ -6,7 +6,8 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import "../data/locales"
+import initTranslations from "../locales/react"
+initTranslations('marketing')
 
 const ArticlePage = ({ pageContext: { slug, html, title, custom_excerpt, feature_image, primary_tag } }) => {
   const { trackPageView } = useMatomo()

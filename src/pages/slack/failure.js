@@ -6,8 +6,10 @@ import Confetti from "react-dom-confetti"
 import Layout from "../../components/layout"
 import SEO from "../../components/seo"
 
-import "../../data/locales"
 import { failureData } from "../../data/confettiData"
+
+import initTranslations from "../../locales/react"
+initTranslations('marketing')
 
 const SlackFailurePage = () => {
   const { t } = useTranslation()
