@@ -1,3 +1,5 @@
+const tailwind = require('tailwindcss')
+
 module.exports = {
   siteMetadata: {
     title: `Minimum Viable Ceremonies`,
@@ -37,9 +39,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sass`,
-      options: {
-        postCssPlugins: [require("tailwindcss")]
-      },
+      options: { postCssPlugins: [tailwind] },
     },
   ],
 }
