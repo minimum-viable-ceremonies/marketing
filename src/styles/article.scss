@@ -10,6 +10,10 @@
   }
 
   &__content {
+    img {
+      max-height: inherit !important;
+    }
+
     .kg-embed-card {
       iframe {
         width: 100%;
@@ -120,6 +124,18 @@
 
     h1 {
       font-size: 36px;
+    }
+
+    h2 {
+      font-size: 32px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    h4 {
+      font-size: 20px;
     }
 
     img {
