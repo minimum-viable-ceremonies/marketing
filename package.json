@@ -7,7 +7,7 @@
   "dependencies": {
     "@datapunt/matomo-tracker-react": "^0.1.5",
     "browser-monads": "^1.0.0",
-    "gatsby": "^2.23.3",
+    "gatsby": "^4.25.7",
     "gatsby-image": "^2.4.7",
     "gatsby-plugin-manifest": "^2.4.11",
     "gatsby-plugin-offline": "^3.2.9",
